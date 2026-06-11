@@ -12,15 +12,22 @@ const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
     <div class="topbar-actions">
       <nav class="lang-switch" aria-label="Language">
         {locales.map((l) => (
-          <a href={`/${l}/`} class={l === cv.locale ? 'active' : ''} aria-current={l === cv.locale ? 'page' : undefined}>
-            {ui.langNames[l]}
+          <a
+            href={`/${l}/`}
+            class={l === cv.locale ? 'active' : ''}
+            aria-current={l === cv.locale ? 'page' : undefined}
+            title={ui.langNames[l]}
+            aria-label={ui.langNames[l]}
+          >
+            {ui.langFlags[l]}
           </a>
         ))}
       </nav>
       <button
-        class="btn"
+        class="btn btn-easter"
         id="theme-toggle"
         type="button"
+        title={ui.themeHint}
         data-label-terminal={ui.themeTerminal}
         data-label-classic={ui.themeClassic}
       >

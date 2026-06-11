@@ -44,6 +44,18 @@
     font-size: 20pt;
   }
 
+  .hero .aka {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 0.5em;
+    color: var(--muted);
+  }
+
+  .hero .nickname-story {
+    font-size: 8.5pt;
+  }
+
   .hero .role {
     font-size: 12pt;
   }

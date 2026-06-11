@@ -2,8 +2,9 @@
   "metaTitle": "Renato Ruis — Senior DevOps Engineer · Kubestronaut",
   "metaDescription": "Senior DevOps Engineer and CNCF Kubestronaut (CKA, CKAD, CKS, KCNA, KCSA). 8+ years in Kubernetes, multi-cloud (AWS, OCI, GCP), GitOps and FinOps. Open to remote and international opportunities.",
   "downloadPdf": "Download PDF",
-  "themeTerminal": "Terminal mode",
-  "themeClassic": "Recruiter mode",
+  "themeTerminal": ">_ terminal",
+  "themeClassic": "recruiter mode",
+  "themeHint": "psst... this one's for the techies",
   "contact": "Contact",
   "terminalCmdGet": "kubectl get engineer renatoruis -o wide",
   "terminalColumns": ["NAME", "READY", "STATUS", "CERTS", "CLOUDS", "AGE"],
@@ -14,5 +15,6 @@
   "footerBuilt": "Built with Astro, deployed on Cloudflare Pages.",
   "footerSource": "Source code",
   "blogVisit": "Read the blog",
+  "langFlags": { "en": "🇬🇧", "pt-pt": "🇵🇹", "pt-br": "🇧🇷" },
   "langNames": { "en": "English", "pt-pt": "Português (PT)", "pt-br": "Português (BR)" }
 }

@@ -4,9 +4,10 @@ const b = cv.basics;
 ---
 
 <section class="hero container">
-  <h1>{b.name}</h1>
+  <h1>{b.name} <span class="aka">aka {b.nickname}</span></h1>
   <p class="role">{b.title}</p>
   <p class="tagline">{b.tagline}</p>
+  <p class="nickname-story">{b.nicknameStory}</p>
   <div class="meta-line">
     <span>📍 {b.location} · {b.availability}</span>
     <a href={`mailto:${b.email}`}>{b.email}</a>

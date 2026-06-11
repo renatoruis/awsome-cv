@@ -3,6 +3,8 @@
   "htmlLang": "pt-BR",
   "basics": {
     "name": "Renato Ruis",
+    "nickname": "Tim DevOps",
+    "nicknameStory": "Por que Tim? Há muito tempo uns amigos cismaram que eu era a cara do Tim Maia. O apelido pegou. A semelhança é discutível.",
     "title": "Engenheiro DevOps Sênior",
     "tagline": "Kubestronaut · CKA · CKAD · CKS · KCNA · KCSA",
     "location": "Portugal",
@@ -12,7 +14,7 @@
     "blog": "https://timdevops.com.br",
     "github": "https://github.com/renatoruis"
   },
-  "summary": "Engenheiro DevOps Sênior com 8+ anos projetando, escalando e operando plataformas cloud de alta disponibilidade em e-commerce, fintech, farma e logística. Kubestronaut — detentor das cinco certificações Kubernetes da CNCF (CKA, CKAD, CKS, KCNA, KCSA). Resultados comprovados: deploys até 70% mais rápidos com CI/CD e GitOps, reduções significativas de custo de nuvem em escala (FinOps) e migrações Kubernetes multi-cloud (EKS/GKE → OKE) com downtime mínimo. Acredito que boa infraestrutura é construída primeiro por pessoas — lidero com transparência, cultura blameless e calma sob pressão.",
+  "summary": "Fala! Sou o Renato, mas todo mundo me conhece como Tim. Engenheiro DevOps Sênior com 8+ anos construindo e escalando plataformas cloud para e-commerce, fintech, farma e logística. Kubestronaut: as cinco certificações Kubernetes da CNCF (CKA, CKAD, CKS, KCNA, KCSA). Já cortei o tempo de deploy em até 70% com CI/CD e GitOps, economizei dinheiro de verdade com FinOps e migrei plataformas Kubernetes inteiras entre clouds quase sem downtime. E acredito de verdade que boa infraestrutura começa pelas pessoas: transparência, cultura blameless e calma quando as coisas pegam fogo.",
   "stats": [
     { "label": "Anos em DevOps/SRE", "value": "8+" },
     { "label": "Certs Kubernetes CNCF", "value": "5/5" },
@@ -21,26 +23,26 @@
   ],
   "kubernetes": {
     "title": "Especialista em Kubernetes",
-    "intro": "Kubernetes é a minha casa. Sou Kubestronaut da CNCF — um dos engenheiros no mundo com as cinco certificações Kubernetes — e rodo Kubernetes em produção todos os dias, em sabores gerenciados e self-hosted.",
+    "intro": "Kubernetes é a minha casa. Sou Kubestronaut da CNCF, um dos engenheiros no mundo com as cinco certificações Kubernetes, e rodo Kubernetes em produção todo santo dia, gerenciado e self-hosted.",
     "items": [
-      "As 5 certificações CNCF: CKA, CKAD, CKS, KCNA, KCSA — mais OCI Kubernetes Specialist",
+      "As 5 certificações CNCF (CKA, CKAD, CKS, KCNA, KCSA), mais OCI Kubernetes Specialist",
       "Experiência em produção com EKS, GKE, OKE, K3s, Rancher, ECS e clusters bare-metal",
-      "Liderei replatform completo de clusters: migração EKS/GKE → OKE, incluindo MySQL/PostgreSQL com downtime mínimo",
+      "Liderei replatform completo de clusters: migração EKS/GKE para OKE, incluindo MySQL/PostgreSQL com downtime mínimo",
       "Mentalidade security-first (CKS): gestão de secrets, network policies, hardening e supply chain",
-      "Entrega GitOps em escala com Argo CD e Flux CD — declarativo, auditável e fácil de reverter",
+      "Entrega GitOps em escala com Argo CD e Flux CD: declarativo, auditável e fácil de reverter",
       "Plataformas com consciência de custo: rightsizing, autoscaling e FinOps aplicados direto nos workloads"
     ]
   },
   "howIWork": {
     "title": "Como Eu Trabalho",
-    "intro": "Habilidade técnica mantém sistemas no ar; inteligência emocional mantém times no ar. É isso que colegas podem esperar de mim:",
+    "intro": "Habilidade técnica mantém sistemas no ar. Inteligência emocional mantém times no ar. É assim que é trabalhar comigo:",
     "items": [
-      { "name": "Blameless por padrão", "description": "Incidente é oportunidade de aprendizado, não tribunal. Construo culturas de postmortem onde as pessoas se sentem seguras para falar a verdade rápido — é assim que o MTTR cai de verdade." },
+      { "name": "Blameless por padrão", "description": "Incidente é oportunidade de aprendizado, não tribunal. Construo culturas de postmortem onde as pessoas se sentem seguras para falar a verdade rápido. É assim que o MTTR cai de verdade." },
       { "name": "Mentoria e contratação", "description": "Atualmente lidero a expansão do time de Infra/DevOps na eureciclo: contratando, mentorando e padronizando boas práticas para o time escalar além de mim." },
       { "name": "Calma sob pressão", "description": "Anos de plantão SRE me ensinaram que uma voz calma no canal de incidente vale mais que um script esperto. Primeiro acalmo, depois debugo." },
-      { "name": "Tradução tech ↔ negócio", "description": "Explico decisões de infraestrutura em termos de custo, risco e velocidade — para que stakeholders não técnicos consigam realmente decidir." },
+      { "name": "Tradução tech ↔ negócio", "description": "Explico decisões de infraestrutura em termos de custo, risco e velocidade, para que stakeholders não técnicos consigam realmente decidir." },
       { "name": "Habilitar outros times", "description": "Meço meu sucesso pela autonomia que os outros times ganham. Documentação, golden paths e pareamento em vez de gatekeeping." },
-      { "name": "Estável e consistente", "description": "Pai de três, casado com a Renata (sim, nossos nomes rimam). Trago estabilidade, pensamento de longo prazo e zero drama para os times." }
+      { "name": "Estável e consistente", "description": "Pai de três, casado com a Renata (sim, nossos nomes rimam). Estabilidade, pensamento de longo prazo e zero drama nos times." }
     ]
   },
   "experience": {
@@ -53,8 +55,8 @@
         "location": "Brasil (remoto)",
         "summary": "DevOps/SRE cross-team em ambiente multi-cloud (AWS, GCP, OCI), responsável por arquitetura de infraestrutura, migração, operação e otimização de custos em uma scale-up de sustentabilidade em rápido crescimento.",
         "highlights": [
-          "Liderei replatform Kubernetes multi-cloud: EKS/GKE → OKE, migrando MySQL/PostgreSQL com downtime mínimo",
-          "Estabeleci GitOps com Argo CD e CI/CD com Bitbucket Pipelines — deploys mais rápidos, auditáveis e reversíveis",
+          "Liderei replatform Kubernetes multi-cloud: EKS/GKE para OKE, migrando MySQL/PostgreSQL com downtime mínimo",
+          "Estabeleci GitOps com Argo CD e CI/CD com Bitbucket Pipelines: deploys mais rápidos, auditáveis e reversíveis",
           "Construí observabilidade com Prometheus, Grafana e Alertmanager; defini SLIs/SLOs e reduzi o MTTR",
           "Conduzi FinOps: rightsizing, reservas, limpeza e negociação com provedores, com economia mensurável",
           "Adotei engenharia assistida por IA/LLM para debugging, análise de logs e automação",
@@ -73,7 +75,7 @@
           "Construí e escalei plataformas Kubernetes/Docker para e-commerce de alto tráfego e core business",
           "Implementei observabilidade com Datadog, AppDynamics, stack ELK, Prometheus e Grafana",
           "Provisionei ambientes como código com Terraform e CloudFormation",
-          "Adaptei soluções entre indústrias e stakeholders — consultoria afiou minha comunicação tanto quanto minha engenharia"
+          "Adaptei soluções entre indústrias e stakeholders. A consultoria afiou minha comunicação tanto quanto minha engenharia."
         ],
         "labels": { "stack": "k8s,aws,gcp,gitlab-ci,terraform", "impact": "faster-delivery,multi-industry" }
       },
@@ -82,7 +84,7 @@
         "role": "Engenheiro DevOps | SRE",
         "period": "Dez 2018 – Dez 2020",
         "location": "São Paulo, Brasil",
-        "summary": "Engenheiro DevOps central da TempoTem, startup de alto crescimento — dono das decisões de infraestrutura e segurança desde os primeiros estágios.",
+        "summary": "Engenheiro DevOps central da TempoTem, startup de alto crescimento, dono das decisões de infraestrutura e segurança desde os primeiros estágios.",
         "highlights": [
           "Projetei infraestrutura AWS escalável suportando o crescimento acelerado do produto",
           "Operei workloads containerizados com Docker e Kubernetes; CI/CD com Bitbucket Pipelines",
@@ -109,7 +111,7 @@
         "role": "Site Reliability Engineer",
         "period": "Jan 2015 – Jan 2017",
         "location": "São Paulo, Brasil",
-        "summary": "Primeiro papel como SRE, nos primórdios do e-commerce do Carrefour no Brasil — construindo as fundações de monitoramento e confiabilidade.",
+        "summary": "Primeiro papel como SRE, nos primórdios do e-commerce do Carrefour no Brasil, construindo as fundações de monitoramento e confiabilidade.",
         "highlights": [
           "Implementei monitoramento de infraestrutura e aplicação com Zabbix e AppDynamics",
           "Defini métricas de confiabilidade para tuning e SLAs",
@@ -177,12 +179,12 @@
     "title": "Idiomas",
     "items": [
       { "name": "Português", "level": "Nativo" },
-      { "name": "Inglês", "level": "B1/B2 — em evolução ativa", "note": "Dois cursos de imersão internacional (Canadá 2024, África do Sul 2021) e uso diário em times distribuídos. Comunicação escrita/assíncrona clara; conversação funcional — e um plano deliberado e contínuo para chegar à fluência total. Prefiro ser transparente a vender o que ainda não tenho." }
+      { "name": "Inglês", "level": "B1/B2 — em evolução ativa", "note": "Dois cursos de imersão internacional (Canadá 2024, África do Sul 2021) e uso diário em times distribuídos. Comunicação escrita/assíncrona clara, conversação funcional e um plano de verdade para chegar à fluência total. Prefiro ser transparente a vender o que ainda não tenho." }
     ]
   },
   "blogSection": {
     "title": "Conteúdo e Comunidade",
-    "intro": "Escrevo sobre DevOps, Kubernetes e self-hosting em timdevops.com.br:",
+    "intro": "Escrevo sobre DevOps, Kubernetes e self-hosting em timdevops.com.br. Sim, o blog leva o nome do apelido:",
     "posts": [
       { "title": "E-mail com domínio próprio de graça com Cloudflare + Gmail", "date": "2026-02" },
       { "title": "Você não precisa pagar para começar a construir sistemas de verdade", "date": "2025-08" },
