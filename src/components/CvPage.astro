@@ -27,6 +27,9 @@ const { cv, ui } = Astro.props;
     <Education cv={cv} />
     <LanguagesSec cv={cv} />
     <Blog cv={cv} ui={ui} />
+    {cv.pdf?.nicknameFootnote && (
+      <p class="pdf-footnote print-only container">{cv.pdf.nicknameFootnote}</p>
+    )}
   </main>
   <script is:inline>
     (() => {

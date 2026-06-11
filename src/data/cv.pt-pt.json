@@ -193,6 +193,20 @@
       { "name": "Inglês", "level": "B1/B2 — em evolução ativa", "note": "Dois cursos de imersão internacional (Canadá 2024, África do Sul 2021) e uso diário em equipas distribuídas. Comunicação escrita/assíncrona clara, conversação funcional e um plano a sério para atingir a fluência total. Prefiro ser transparente a vender o que ainda não tenho." }
     ]
   },
+  "pdf": {
+    "nicknameFootnote": "Também conhecido como Tim DevOps — amigos deram-me a alcunha por causa do Tim Maia, cantor brasileiro lendário. A semelhança é discutível.",
+    "hideSections": ["blog"],
+    "howIWorkHide": ["Estável e consistente"],
+    "educationHideAfter": 1,
+    "jobs": {
+      "Luft Solutions": {
+        "summary": "Analista de infraestrutura → coordenador; liderou suporte IT em centros de distribuição em quatro estados (Carrefour, Amazon, Louis Vuitton)."
+      },
+      "Carrefour Brasil": {
+        "summary": "Primeira função SRE: fundações de monitorização e fiabilidade (Zabbix, AppDynamics, Rundeck) no e-commerce inicial do Carrefour Brasil."
+      }
+    }
+  },
   "blogSection": {
     "title": "Conteúdo e Comunidade",
     "intro": "Escrevo sobre DevOps, Kubernetes e self-hosting em timdevops.com.br. Sim, o blog tem o nome da alcunha:",

@@ -14,9 +14,17 @@
   }
 
   body {
-    font-size: 10.5pt;
-    line-height: 1.45;
+    font-size: 9.5pt;
+    line-height: 1.35;
     background: #fff !important;
+  }
+
+  .web-only {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
   }
 
   .topbar,
@@ -31,7 +39,9 @@
   .quick-facts,
   .cert-decoder,
   .incident-demo,
-  .say-hi {
+  .say-hi,
+  .cert-kubestronaut,
+  .kubestronaut-cmd {
     display: none !important;
   }
 
@@ -41,11 +51,11 @@
   }
 
   .hero {
-    padding: 0 0 0.6rem;
+    padding: 0 0 0.4rem;
   }
 
   .hero h1 {
-    font-size: 20pt;
+    font-size: 18pt;
   }
 
   .hero .aka {
@@ -56,42 +66,66 @@
     color: var(--muted);
   }
 
-  .hero .nickname-story {
-    font-size: 8.5pt;
+  .hero .tagline {
+    display: none;
   }
 
   .hero .role {
-    font-size: 12pt;
+    font-size: 11pt;
   }
 
   .hero .tagline {
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-family: var(--font-body);
   }
 
   .hero .meta-line {
-    font-size: 9pt;
-    margin-bottom: 0.6rem;
+    font-size: 8.5pt;
+    margin-bottom: 0.4rem;
   }
 
   .summary {
-    font-size: 10pt;
+    font-size: 9.5pt;
     max-width: 100%;
   }
 
   section.cv-section {
-    padding: 0.7rem 0;
+    padding: 0.45rem 0;
     opacity: 1 !important;
     transform: none !important;
   }
 
   .section-title {
-    font-size: 13pt;
+    font-size: 12pt;
+    margin-bottom: 0.25rem;
   }
 
   .section-intro {
-    font-size: 9.5pt;
+    font-size: 9pt;
     max-width: 100%;
+    margin-bottom: 0.4rem;
+  }
+
+  #kubernetes .section-intro,
+  #how-i-work .section-intro {
+    display: none;
+  }
+
+  #how-i-work .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .job .location {
+    display: none;
+  }
+
+  #kubernetes .check-list li:nth-child(n + 5) {
+    display: none;
+  }
+
+  .check-list {
+    font-size: 9pt;
+    gap: 0.25rem;
   }
 
   .job,
@@ -100,58 +134,114 @@
     border: none;
     border-left: 2pt solid var(--border);
     border-radius: 0;
-    padding: 0.2rem 0 0.2rem 0.7rem;
-    margin-bottom: 0.6rem;
+    padding: 0.15rem 0 0.15rem 0.6rem;
+    margin-bottom: 0.4rem;
     break-inside: avoid;
+  }
+
+  .job-compact {
+    margin-bottom: 0.3rem;
+  }
+
+  .job-compact .job-summary {
+    font-size: 9pt;
+    margin: 0;
+  }
+
+  .job:not(.job-compact) ul li:nth-child(n + 3) {
+    display: none;
   }
 
   .cards-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 0.4rem;
+    gap: 0.25rem;
+  }
+
+  #education .cards-grid {
+    grid-template-columns: 1fr;
   }
 
   .card p {
-    font-size: 8.5pt;
+    font-size: 8pt;
+  }
+
+  .card h3 {
+    font-size: 9pt;
+    margin-bottom: 0.15rem;
   }
 
   .job ul {
-    font-size: 9pt;
+    font-size: 8.5pt;
+    margin: 0.2rem 0 0;
   }
 
   .job .job-summary {
+    font-size: 9pt;
+  }
+
+  .job-head h3 {
     font-size: 9.5pt;
+  }
+
+  .job-head .period,
+  .job .location {
+    font-size: 8pt;
   }
 
   .cert-badge {
     border: none;
     background: none;
-    font-size: 8.5pt;
+    font-size: 8pt;
     font-weight: 700;
-    padding: 0.1rem 0;
+    padding: 0.05rem 0;
     break-inside: avoid;
   }
 
   .cert-featured {
     grid-template-columns: 1fr 1fr;
-    gap: 0.35rem;
+    gap: 0.2rem;
+    margin-bottom: 0.4rem;
   }
 
   .cert-others {
-    font-size: 8.5pt;
+    columns: 1;
+    font-size: 8pt;
+    margin: 0;
   }
 
   .chip {
     border: 0.5pt solid var(--border);
-    font-size: 8pt;
+    font-size: 7.5pt;
     font-family: var(--font-body);
+    padding: 0.1rem 0.4rem;
   }
 
-  .check-list {
-    font-size: 9.5pt;
+  .skill-group {
+    margin-bottom: 0.35rem;
+  }
+
+  .skill-group h3 {
+    font-size: 9pt;
+    margin-bottom: 0.15rem;
   }
 
   .lang-item .lang-note {
+    font-size: 8pt;
+    max-width: 100%;
+  }
+
+  .lang-item .lang-name,
+  .lang-item .lang-level {
     font-size: 9pt;
+  }
+
+  .pdf-footnote {
+    margin-top: 0.75rem;
+    padding-top: 0.4rem;
+    border-top: 0.5pt solid var(--border);
+    font-size: 7.5pt;
+    font-style: italic;
+    color: var(--muted);
     max-width: 100%;
   }
 

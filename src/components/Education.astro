@@ -7,8 +7,8 @@ const e = cv.education;
   <h2 class="section-title"><span class="hash">##</span>{e.title}</h2>
   <p class="section-cmd">kubectl get education --sort-by=.metadata.creationTimestamp</p>
   <div class="cards-grid">
-    {e.items.map((item) => (
-      <div class="card">
+    {e.items.map((item, i) => (
+      <div class:list={['card', { 'web-only': i >= (cv.pdf?.educationHideAfter ?? Infinity) }]}>
         <h3>{item.name}</h3>
         <p>{item.org}</p>
         <p><small>{item.period}</small></p>

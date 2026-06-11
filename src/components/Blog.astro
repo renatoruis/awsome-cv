@@ -3,7 +3,7 @@ const { cv, ui } = Astro.props;
 const b = cv.blogSection;
 ---
 
-<section class="cv-section container" id="blog">
+<section class="cv-section container web-only" id="blog">
   <h2 class="section-title"><span class="hash">##</span>{b.title}</h2>
   <p class="section-cmd">{ui.terminalCmdLogs}</p>
   <p class="section-intro">{b.intro}</p>

@@ -32,7 +32,7 @@ const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
 await page.setViewport({ width: 794, height: 1123 });
 await page.emulateMediaType('print');
-await page.goto(`http://localhost:${PORT}/pt-br/`, { waitUntil: 'networkidle0' });
+await page.goto(`http://localhost:${PORT}/en/`, { waitUntil: 'networkidle0' });
 await new Promise((r) => setTimeout(r, 1500));
 await page.screenshot({ path: '/tmp/cv-print.png', fullPage: true });
 

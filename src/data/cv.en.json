@@ -193,6 +193,20 @@
       { "name": "English", "level": "B1/B2 — actively improving", "note": "Two international immersion courses (Canada 2024, South Africa 2021) and daily use in distributed teams. Clear written and async communication, conversational speaking, and a real ongoing plan to reach full fluency. I'd rather be upfront about this than oversell it." }
     ]
   },
+  "pdf": {
+    "nicknameFootnote": "Also known as Tim DevOps — friends nicknamed me after Tim Maia, a legendary Brazilian singer. The resemblance is debatable.",
+    "hideSections": ["blog"],
+    "howIWorkHide": ["Grounded & consistent"],
+    "educationHideAfter": 1,
+    "jobs": {
+      "Luft Solutions": {
+        "summary": "Infrastructure analyst → coordinator; led IT support across logistics distribution centers in four Brazilian states (Carrefour, Amazon, Louis Vuitton)."
+      },
+      "Carrefour Brasil": {
+        "summary": "First SRE role: built monitoring and reliability foundations (Zabbix, AppDynamics, Rundeck) for Carrefour's early e-commerce in Brazil."
+      }
+    }
+  },
   "blogSection": {
     "title": "Writing & Community",
     "intro": "I write about DevOps, Kubernetes and self-hosting at timdevops.com.br (in Portuguese). Yes, the blog is named after the nickname:",

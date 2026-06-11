@@ -18,7 +18,7 @@ const toCondition = (name) =>
   <p class="section-intro">{h.intro}</p>
   <div class="cards-grid">
     {h.items.map((item) => (
-      <div class="card">
+      <div class:list={['card', { 'web-only': cv.pdf?.howIWorkHide?.includes(item.name) }]}>
         <span class="condition-tag">{toCondition(item.name)}=True</span>
         <h3>{item.name}</h3>
         <p>{item.description}</p>

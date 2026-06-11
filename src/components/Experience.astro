@@ -1,26 +1,42 @@
 ---
 const { cv } = Astro.props;
 const e = cv.experience;
+const pdfJobs = cv.pdf?.jobs ?? {};
 ---
 
 <section class="cv-section container" id="experience">
   <h2 class="section-title"><span class="hash">##</span>{e.title}</h2>
   <p class="section-cmd">kubectl get deployments -n career --sort-by=.metadata.creationTimestamp -r</p>
-  {e.jobs.map((job) => (
-    <article class="job">
-      <div class="job-head">
-        <h3>{job.role} <span class="company">@ {job.company}</span></h3>
-        <span class="period">{job.period}</span>
-      </div>
-      <p class="location">{job.location}</p>
-      <p class="job-summary">{job.summary}</p>
-      <ul>
-        {job.highlights.map((h) => <li>{h}</li>)}
-      </ul>
-      <div class="job-labels">
-        <span>stack: {job.labels.stack}</span>
-        <span>impact: {job.labels.impact}</span>
-      </div>
-    </article>
-  ))}
+  {e.jobs.map((job) => {
+    const compact = pdfJobs[job.company];
+    return (
+      <>
+        <article class:list={['job', { 'web-only': compact }]}>
+          <div class="job-head">
+            <h3>{job.role} <span class="company">@ {job.company}</span></h3>
+            <span class="period">{job.period}</span>
+          </div>
+          <p class="location">{job.location}</p>
+          <p class="job-summary">{job.summary}</p>
+          <ul>
+            {job.highlights.map((h) => <li>{h}</li>)}
+          </ul>
+          <div class="job-labels">
+            <span>stack: {job.labels.stack}</span>
+            <span>impact: {job.labels.impact}</span>
+          </div>
+        </article>
+        {compact && (
+          <article class="job print-only job-compact">
+            <div class="job-head">
+              <h3>{job.role} <span class="company">@ {job.company}</span></h3>
+              <span class="period">{job.period}</span>
+            </div>
+            <p class="location">{job.location}</p>
+            <p class="job-summary">{compact.summary}</p>
+          </article>
+        )}
+      </>
+    );
+  })}
 </section>
