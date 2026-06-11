@@ -1,0 +1,51 @@
+---
+const { cv, ui } = Astro.props;
+const locales = ['en', 'pt-pt', 'pt-br'];
+const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
+---
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href={`/${cv.locale}/`}>
+      <span class="prompt-char">~$</span> renatoruis
+    </a>
+    <div class="topbar-actions">
+      <nav class="lang-switch" aria-label="Language">
+        {locales.map((l) => (
+          <a href={`/${l}/`} class={l === cv.locale ? 'active' : ''} aria-current={l === cv.locale ? 'page' : undefined}>
+            {ui.langNames[l]}
+          </a>
+        ))}
+      </nav>
+      <button
+        class="btn"
+        id="theme-toggle"
+        type="button"
+        data-label-terminal={ui.themeTerminal}
+        data-label-classic={ui.themeClassic}
+      >
+        {ui.themeTerminal}
+      </button>
+      <a class="btn btn-primary" href={pdfHref} download>
+        ⬇ {ui.downloadPdf}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const sync = () => {
+      const isTerminal = root.dataset.theme === 'terminal';
+      btn.textContent = isTerminal ? btn.dataset.labelClassic : btn.dataset.labelTerminal;
+    };
+    btn.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'terminal' ? 'classic' : 'terminal';
+      localStorage.setItem('cv-theme', root.dataset.theme);
+      sync();
+    });
+    sync();
+  })();
+</script>

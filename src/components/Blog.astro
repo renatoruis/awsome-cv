@@ -1,0 +1,19 @@
+---
+const { cv, ui } = Astro.props;
+const b = cv.blogSection;
+---
+
+<section class="cv-section container" id="blog">
+  <h2 class="section-title"><span class="hash">##</span>{b.title}</h2>
+  <p class="section-cmd">{ui.terminalCmdLogs}</p>
+  <p class="section-intro">{b.intro}</p>
+  <ul class="blog-list">
+    {b.posts.map((post) => (
+      <li>
+        {post.title}
+        <span class="post-date">{post.date}</span>
+      </li>
+    ))}
+  </ul>
+  <a class="btn blog-visit-btn" href={cv.basics.blog} target="_blank" rel="noopener">{ui.blogVisit} ↗</a>
+</section>

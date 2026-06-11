@@ -1,0 +1,21 @@
+# build
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# env
+.env
+.env.*
+
+# os
+.DS_Store
+
+# source PDFs with personal data (not published)
+Profile.pdf
+CV - PT-BR - Renato Ruis .pdf
+CV - Renato Ruis - Devops.pdf
+
+# wrangler
+.wrangler/

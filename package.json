@@ -1,0 +1,22 @@
+{
+  "name": "awsome-cv",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Multilingual CV landing page (en, pt-pt, pt-br) — Astro + Cloudflare Pages",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/generate-pdf.mjs",
+    "build:site": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name renato-cv"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^6.4.6"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.1.0",
+    "wrangler": "^4.99.0"
+  }
+}

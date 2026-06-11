@@ -1,0 +1,13 @@
+---
+const { cv } = Astro.props;
+const k = cv.kubernetes;
+---
+
+<section class="cv-section container" id="kubernetes">
+  <h2 class="section-title"><span class="hash">##</span>{k.title}</h2>
+  <p class="section-cmd">kubectl get certifications -l vendor=cncf</p>
+  <p class="section-intro">{k.intro}</p>
+  <ul class="check-list">
+    {k.items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>

@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import '../styles/print.css';
+
+const { cv, ui } = Astro.props;
+const locales = ['en', 'pt-pt', 'pt-br'];
+const hreflangMap = { en: 'en', 'pt-pt': 'pt-PT', 'pt-br': 'pt-BR' };
+const site = Astro.site?.href.replace(/\/$/, '') ?? '';
+const canonical = `${site}/${cv.locale}/`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: cv.basics.name,
+  jobTitle: cv.basics.title,
+  email: `mailto:${cv.basics.email}`,
+  url: canonical,
+  sameAs: [cv.basics.linkedin, cv.basics.blog, cv.basics.github],
+  address: { '@type': 'PostalAddress', addressCountry: 'PT' },
+  knowsLanguage: ['pt', 'en'],
+  hasCredential: cv.certifications.featured.map((c) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: c,
+  })),
+};
+---
+
+<!doctype html>
+<html lang={cv.htmlLang} data-theme="classic">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{ui.metaTitle}</title>
+    <meta name="description" content={ui.metaDescription} />
+    <link rel="canonical" href={canonical} />
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={hreflangMap[l]} href={`${site}/${l}/`} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={ui.metaTitle} />
+    <meta property="og:description" content={ui.metaDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={cv.htmlLang.replace('-', '_')} />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>
+      const saved = localStorage.getItem('cv-theme');
+      if (saved === 'terminal' || saved === 'classic') {
+        document.documentElement.dataset.theme = saved;
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

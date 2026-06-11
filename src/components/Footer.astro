@@ -1,0 +1,14 @@
+---
+const { cv, ui } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-prompt">kubectl get engineer renatoruis -o yaml | grep status → Running ☸</p>
+    <p>
+      © {year} {cv.basics.name} · {ui.footerBuilt}
+      <a href="https://github.com/renatoruis/awsome-cv" target="_blank" rel="noopener">{ui.footerSource}</a>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,151 @@
+@media print {
+  html[data-theme='classic'],
+  html[data-theme='terminal'] {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --text: #111111;
+    --muted: #444444;
+    --accent: #1a3f9e;
+    --accent-soft: #eef2fb;
+    --border: #d8d8d8;
+    --ok: #1a6b42;
+    --font-body: Georgia, 'Times New Roman', serif;
+    --font-mono: 'Courier New', monospace;
+  }
+
+  body {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    background: #fff !important;
+  }
+
+  .topbar,
+  .terminal-window,
+  .section-cmd,
+  .job-labels,
+  .stats,
+  .term-only,
+  .condition-tag,
+  .section-title .hash,
+  .blog-visit-btn {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .hero {
+    padding: 0 0 0.6rem;
+  }
+
+  .hero h1 {
+    font-size: 20pt;
+  }
+
+  .hero .role {
+    font-size: 12pt;
+  }
+
+  .hero .tagline {
+    font-size: 9.5pt;
+    font-family: var(--font-body);
+  }
+
+  .hero .meta-line {
+    font-size: 9pt;
+    margin-bottom: 0.6rem;
+  }
+
+  .summary {
+    font-size: 10pt;
+    max-width: 100%;
+  }
+
+  section.cv-section {
+    padding: 0.7rem 0;
+  }
+
+  .section-title {
+    font-size: 13pt;
+  }
+
+  .section-intro {
+    font-size: 9.5pt;
+    max-width: 100%;
+  }
+
+  .job,
+  .card,
+  .stat {
+    border: none;
+    border-left: 2pt solid var(--border);
+    border-radius: 0;
+    padding: 0.2rem 0 0.2rem 0.7rem;
+    margin-bottom: 0.6rem;
+    break-inside: avoid;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .card p {
+    font-size: 8.5pt;
+  }
+
+  .job ul {
+    font-size: 9pt;
+  }
+
+  .job .job-summary {
+    font-size: 9.5pt;
+  }
+
+  .cert-badge {
+    border: 1pt solid var(--accent);
+    background: none;
+    font-size: 8.5pt;
+    padding: 0.25rem 0.5rem;
+    break-inside: avoid;
+  }
+
+  .cert-featured {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem;
+  }
+
+  .cert-others {
+    font-size: 8.5pt;
+  }
+
+  .chip {
+    border: 0.5pt solid var(--border);
+    font-size: 8pt;
+    font-family: var(--font-body);
+  }
+
+  .check-list {
+    font-size: 9.5pt;
+  }
+
+  .lang-item .lang-note {
+    font-size: 9pt;
+    max-width: 100%;
+  }
+
+  footer.site-footer {
+    display: none;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .hero .meta-line a::after {
+    content: '';
+  }
+}

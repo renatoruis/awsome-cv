@@ -1,0 +1,71 @@
+---
+const { cv, ui } = Astro.props;
+const b = cv.basics;
+---
+
+<section class="hero container">
+  <h1>{b.name}</h1>
+  <p class="role">{b.title}</p>
+  <p class="tagline">{b.tagline}</p>
+  <div class="meta-line">
+    <span>📍 {b.location} · {b.availability}</span>
+    <a href={`mailto:${b.email}`}>{b.email}</a>
+    <a href={b.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+    <a href={b.blog} target="_blank" rel="noopener">timdevops.com.br</a>
+  </div>
+
+  <div class="terminal-window" aria-hidden="true">
+    <div class="terminal-titlebar">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+      <span class="title">renato@k8s:~</span>
+    </div>
+    <div class="terminal-body">
+      <div class="cmd typing-caret" id="hero-cmd" data-cmd={ui.terminalCmdGet}></div>
+      <table id="hero-table" style="visibility:hidden">
+        <thead>
+          <tr>{ui.terminalColumns.map((c) => <th>{c}</th>)}</tr>
+        </thead>
+        <tbody>
+          <tr>
+            {ui.terminalRow.map((v, i) => (
+              <td class={v === 'Running' ? 'status-running' : ''}>{v}</td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <p class="summary">{cv.summary}</p>
+
+  <div class="stats">
+    {cv.stats.map((s) => (
+      <div class="stat">
+        <div class="value">{s.value}</div>
+        <div class="label">{s.label}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script is:inline>
+  (() => {
+    const el = document.getElementById('hero-cmd');
+    const table = document.getElementById('hero-table');
+    const text = el.dataset.cmd;
+    let i = 0;
+    const type = () => {
+      if (i <= text.length) {
+        el.textContent = text.slice(0, i);
+        i += 1;
+        setTimeout(type, 28);
+      } else {
+        el.classList.remove('typing-caret');
+        table.style.visibility = 'visible';
+      }
+    };
+    setTimeout(type, 350);
+  })();
+</script>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from './TopBar.astro';
+import Hero from './Hero.astro';
+import Kubernetes from './Kubernetes.astro';
+import HowIWork from './HowIWork.astro';
+import Experience from './Experience.astro';
+import Skills from './Skills.astro';
+import Certs from './Certs.astro';
+import Education from './Education.astro';
+import LanguagesSec from './LanguagesSec.astro';
+import Blog from './Blog.astro';
+import Footer from './Footer.astro';
+
+const { cv, ui } = Astro.props;
+---
+
+<Layout cv={cv} ui={ui}>
+  <TopBar cv={cv} ui={ui} />
+  <main>
+    <Hero cv={cv} ui={ui} />
+    <Kubernetes cv={cv} />
+    <HowIWork cv={cv} ui={ui} />
+    <Experience cv={cv} />
+    <Skills cv={cv} />
+    <Certs cv={cv} />
+    <Education cv={cv} />
+    <LanguagesSec cv={cv} />
+    <Blog cv={cv} ui={ui} />
+  </main>
+  <Footer cv={cv} ui={ui} />
+</Layout>

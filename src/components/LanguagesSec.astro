@@ -1,0 +1,15 @@
+---
+const { cv } = Astro.props;
+const l = cv.languages;
+---
+
+<section class="cv-section container" id="languages">
+  <h2 class="section-title"><span class="hash">##</span>{l.title}</h2>
+  {l.items.map((item) => (
+    <div class="lang-item">
+      <span class="lang-name">{item.name}</span>
+      <span class="lang-level">{item.level}</span>
+      {item.note && <p class="lang-note">{item.note}</p>}
+    </div>
+  ))}
+</section>

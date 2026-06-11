@@ -1,0 +1,193 @@
+{
+  "locale": "en",
+  "htmlLang": "en",
+  "basics": {
+    "name": "Renato Ruis",
+    "title": "Senior DevOps Engineer",
+    "tagline": "Kubestronaut · CKA · CKAD · CKS · KCNA · KCSA",
+    "location": "Portugal",
+    "availability": "Open to remote and international opportunities",
+    "email": "renatoruis@linux.com",
+    "linkedin": "https://www.linkedin.com/in/renatoruis/",
+    "blog": "https://timdevops.com.br",
+    "github": "https://github.com/renatoruis"
+  },
+  "summary": "Senior DevOps Engineer with 8+ years designing, scaling, and operating highly available cloud platforms across e-commerce, fintech, pharma, and logistics. Kubestronaut — holder of all five CNCF Kubernetes certifications (CKA, CKAD, CKS, KCNA, KCSA). Proven results: deployments up to 70% faster through CI/CD and GitOps, significant cloud cost reductions at scale (FinOps), and multi-cloud Kubernetes migrations (EKS/GKE → OKE) with minimal downtime. I believe great infrastructure is built by people first — I lead with transparency, blameless culture, and calm under pressure.",
+  "stats": [
+    { "label": "Years in DevOps/SRE", "value": "8+" },
+    { "label": "CNCF Kubernetes certs", "value": "5/5" },
+    { "label": "Faster deployments", "value": "-70%" },
+    { "label": "Clouds in production", "value": "AWS · OCI · GCP" }
+  ],
+  "kubernetes": {
+    "title": "Kubernetes Expertise",
+    "intro": "Kubernetes is my home turf. I am a CNCF Kubestronaut — one of the engineers worldwide holding all five Kubernetes certifications — and I run it in production every day, across managed and self-hosted flavors.",
+    "items": [
+      "All 5 CNCF certifications: CKA, CKAD, CKS, KCNA, KCSA — plus OCI Kubernetes Specialist",
+      "Production experience with EKS, GKE, OKE, K3s, Rancher, ECS, and bare-metal clusters",
+      "Led full cluster replatforming: EKS/GKE → OKE migration, including MySQL/PostgreSQL with minimal downtime",
+      "Security-first mindset (CKS): secrets management, network policies, hardening, supply-chain awareness",
+      "GitOps delivery at scale with Argo CD and Flux CD — declarative, auditable, easy to roll back",
+      "Cost-aware platform design: rightsizing, autoscaling, and FinOps applied directly to cluster workloads"
+    ]
+  },
+  "howIWork": {
+    "title": "How I Work",
+    "intro": "Technical skills get systems running; emotional intelligence keeps teams running. This is what colleagues can expect from me:",
+    "items": [
+      { "name": "Blameless by default", "description": "Incidents are learning opportunities, not trials. I build postmortem cultures where people feel safe telling the truth fast — which is how MTTR actually goes down." },
+      { "name": "Mentorship & hiring", "description": "Currently leading the expansion of the Infra/DevOps team at eureciclo: hiring, mentoring, and standardizing good practices so the team scales beyond me." },
+      { "name": "Calm under pressure", "description": "Years of SRE on-call taught me that a calm voice in an incident channel is worth more than a clever script. I de-escalate first, debug second." },
+      { "name": "Tech ↔ business translation", "description": "I explain infrastructure decisions in terms of cost, risk, and speed — so non-technical stakeholders can actually make decisions." },
+      { "name": "Cross-team enablement", "description": "I measure my success by how autonomous other teams become. Documentation, golden paths, and pairing over gatekeeping." },
+      { "name": "Grounded & consistent", "description": "Father of three, married to Renata (yes, our names rhyme). I bring stability, long-term thinking, and zero drama to the teams I join." }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "jobs": [
+      {
+        "company": "eureciclo",
+        "role": "Senior DevOps Engineer | SRE",
+        "period": "May 2023 – Present",
+        "location": "Brazil (remote)",
+        "summary": "Cross-team DevOps/SRE in a multi-cloud environment (AWS, GCP, OCI), owning infrastructure architecture, migration, operations, and cost optimization for a fast-growing sustainability scale-up.",
+        "highlights": [
+          "Led multi-cloud Kubernetes replatforming: EKS/GKE → OKE, migrating MySQL/PostgreSQL with minimal downtime",
+          "Established GitOps with Argo CD and CI/CD with Bitbucket Pipelines — faster, auditable, reversible deploys",
+          "Built observability with Prometheus, Grafana, and Alertmanager; defined SLIs/SLOs and cut MTTR",
+          "Drove FinOps: rightsizing, reservations, cleanup, and cloud provider negotiation with measurable savings",
+          "Adopted AI/LLM-assisted engineering for debugging, log analysis, and automation workflows",
+          "Leading the team's expansion: hiring, mentoring, and standardizing DevOps practices"
+        ],
+        "labels": { "stack": "k8s,aws,gcp,oci,terraform,argocd", "impact": "finops-savings,minimal-downtime-migration" }
+      },
+      {
+        "company": "Builders",
+        "role": "DevOps Consultant | SRE",
+        "period": "Dec 2020 – May 2023",
+        "location": "Brazil",
+        "summary": "DevOps consultant for large enterprise clients in pharmacy (Raia Drogasil, Grupo DPSP), transportation, and banking, operating complex AWS/GCP cloud-native environments.",
+        "highlights": [
+          "Designed and optimized CI/CD pipelines with GitLab CI, Bitbucket Pipelines, and GitHub Actions across multiple teams",
+          "Built and scaled Kubernetes/Docker platforms for high-traffic e-commerce and core-business workloads",
+          "Implemented observability with Datadog, AppDynamics, ELK stack, Prometheus, and Grafana",
+          "Provisioned environments as code with Terraform and CloudFormation",
+          "Adapted solutions across industries and stakeholders — consulting sharpened my communication as much as my engineering"
+        ],
+        "labels": { "stack": "k8s,aws,gcp,gitlab-ci,terraform", "impact": "faster-delivery,multi-industry" }
+      },
+      {
+        "company": "FCamara Consulting & Training",
+        "role": "DevOps Engineer | SRE",
+        "period": "Dec 2018 – Dec 2020",
+        "location": "São Paulo, Brazil",
+        "summary": "Core DevOps engineer for TempoTem, a high-growth startup — owning infrastructure and security decisions from the earliest stages.",
+        "highlights": [
+          "Designed scalable AWS infrastructure supporting rapid product growth",
+          "Ran containerized workloads with Docker and Kubernetes; CI/CD with Bitbucket Pipelines",
+          "Delivered full observability: Elasticsearch, Kibana, Prometheus, Grafana, Alertmanager, and Instana",
+          "Contributed to security and architecture decisions from day one; supported frontend delivery via Vercel"
+        ],
+        "labels": { "stack": "aws,k8s,docker,elk", "impact": "startup-from-scratch" }
+      },
+      {
+        "company": "Concrete Solutions (Accenture Group)",
+        "role": "DevOps Engineer",
+        "period": "Jan 2017 – Dec 2018",
+        "location": "São Paulo, Brazil",
+        "summary": "DevOps for major enterprise clients (SKY, Carrefour, Cielo), building automated deployment pipelines for native mobile apps in SCRUM teams.",
+        "highlights": [
+          "Built Jenkins pipelines automating Android/iOS releases end-to-end, cutting manual work and time-to-market",
+          "Operated AWS-based infrastructure for high-demand e-commerce platforms",
+          "Integrated APM tooling for proactive issue detection"
+        ],
+        "labels": { "stack": "jenkins,aws,mobile-ci", "impact": "automated-mobile-releases" }
+      },
+      {
+        "company": "Carrefour Brasil",
+        "role": "Site Reliability Engineer",
+        "period": "Jan 2015 – Jan 2017",
+        "location": "São Paulo, Brazil",
+        "summary": "First SRE role, during the early days of Carrefour's e-commerce in Brazil — building the monitoring and reliability foundations.",
+        "highlights": [
+          "Implemented infrastructure and application monitoring with Zabbix and AppDynamics",
+          "Defined reliability metrics supporting tuning and SLAs",
+          "Automated operations with shell scripts, cron, and Rundeck"
+        ],
+        "labels": { "stack": "zabbix,appdynamics,rundeck", "impact": "reliability-foundations" }
+      },
+      {
+        "company": "Luft Solutions",
+        "role": "Technical Support Coordinator",
+        "period": "Aug 2010 – Oct 2015",
+        "location": "Barueri, Brazil",
+        "summary": "Grew from infrastructure analyst to coordinator, leading field support teams across distribution centers in four Brazilian states for clients like Carrefour, Amazon, and Louis Vuitton.",
+        "highlights": [
+          "Led regional support teams ensuring consistent IT delivery in logistics hubs",
+          "Managed server provisioning, networking, vendors, and contracts",
+          "Bridged technical teams and logistics leadership to align infrastructure with SLAs"
+        ],
+        "labels": { "stack": "infra,networking,leadership", "impact": "analyst-to-coordinator" }
+      }
+    ]
+  },
+  "skills": {
+    "title": "Core Skills",
+    "groups": [
+      { "name": "Containers & Orchestration", "items": ["Kubernetes (EKS, GKE, OKE, K3s, Rancher, bare-metal)", "Docker", "Helm"] },
+      { "name": "Cloud", "items": ["AWS", "OCI", "GCP", "Azure (working knowledge)", "Hetzner", "DigitalOcean"] },
+      { "name": "CI/CD & GitOps", "items": ["Argo CD", "Flux CD", "GitHub Actions", "GitLab CI", "Bitbucket Pipelines", "Jenkins"] },
+      { "name": "Infrastructure as Code", "items": ["Terraform", "Ansible", "CloudFormation"] },
+      { "name": "Observability", "items": ["Prometheus", "Grafana", "Alertmanager", "OpenTelemetry", "Loki/Tempo", "ELK/OpenSearch", "Datadog", "Zabbix"] },
+      { "name": "Other", "items": ["Linux (advanced)", "FinOps", "Bash/Shell", "Python", "Kafka", "Kong API Gateway", "MySQL/PostgreSQL/MongoDB", "AI/LLM-assisted workflows"] }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "featured": [
+      "CKA — Certified Kubernetes Administrator (CNCF)",
+      "CKAD — Certified Kubernetes Application Developer (CNCF)",
+      "CKS — Certified Kubernetes Security Specialist (CNCF)",
+      "KCNA — Kubernetes and Cloud Native Associate (CNCF)",
+      "KCSA — Kubernetes and Cloud Native Security Associate (CNCF)"
+    ],
+    "others": [
+      "OCI Kubernetes Specialist — Oracle",
+      "OCI Cloud Foundations Associate — Oracle",
+      "AWS Certified SysOps Administrator",
+      "AWS Certified Cloud Practitioner",
+      "AWS Certified Solutions Architect – Associate (expired)",
+      "Microsoft AZ-900",
+      "Cybersecurity Awareness (CAPC) — CertiProf",
+      "ITIL — AXELOS",
+      "Scrum Foundations — CertiProf",
+      "ISO 20000 / ISO/IEC 27002 — EXIN"
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      { "name": "Analysis and Systems Development (IT)", "org": "UNINTER — Centro Universitário Internacional", "period": "2017 – 2019" },
+      { "name": "General English (immersion)", "org": "ANNE'S Language House — Canada", "period": "Dec 2023 – Feb 2024" },
+      { "name": "English B1 (immersion)", "org": "International House — South Africa", "period": "Sep 2021 – Dec 2021" }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "items": [
+      { "name": "Portuguese", "level": "Native" },
+      { "name": "English", "level": "B1/B2 — actively improving", "note": "Two international immersion courses (Canada 2024, South Africa 2021) and daily use in distributed teams. Clear written/async communication; conversational speaking — and a deliberate, ongoing plan to reach full fluency. I'd rather be upfront about this than oversell it." }
+    ]
+  },
+  "blogSection": {
+    "title": "Writing & Community",
+    "intro": "I write about DevOps, Kubernetes, and self-hosting at timdevops.com.br (in Portuguese):",
+    "posts": [
+      { "title": "Free custom-domain email with Cloudflare + Gmail", "date": "2026-02" },
+      { "title": "You don't need to pay to start building real systems", "date": "2025-08" },
+      { "title": "Why every dev should try self-hosting", "date": "2025-08" },
+      { "title": "The new AWS EKS Dashboard", "date": "2025-05" }
+    ]
+  }
+}

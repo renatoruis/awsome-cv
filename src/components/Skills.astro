@@ -1,0 +1,19 @@
+---
+const { cv } = Astro.props;
+const s = cv.skills;
+---
+
+<section class="cv-section container" id="skills">
+  <h2 class="section-title"><span class="hash">##</span>{s.title}</h2>
+  <p class="section-cmd">kubectl get skills -o wide</p>
+  <div class="cards-grid">
+    {s.groups.map((g) => (
+      <div class="skill-group">
+        <h3>{g.name}</h3>
+        <div class="chips">
+          {g.items.map((item) => <span class="chip">{item}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

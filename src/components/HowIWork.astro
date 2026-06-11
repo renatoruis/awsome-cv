@@ -1,0 +1,28 @@
+---
+const { cv, ui } = Astro.props;
+const h = cv.howIWork;
+const toCondition = (name) =>
+  name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .split(' ')
+    .filter(Boolean)
+    .map((w) => w[0].toUpperCase() + w.slice(1))
+    .join('');
+---
+
+<section class="cv-section container" id="how-i-work">
+  <h2 class="section-title"><span class="hash">##</span>{h.title}</h2>
+  <p class="section-cmd">{ui.terminalCmdDescribe}</p>
+  <p class="section-intro">{h.intro}</p>
+  <div class="cards-grid">
+    {h.items.map((item) => (
+      <div class="card">
+        <span class="condition-tag">{toCondition(item.name)}=True</span>
+        <h3>{item.name}</h3>
+        <p>{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>

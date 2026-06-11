@@ -1,0 +1,17 @@
+---
+const { cv } = Astro.props;
+const e = cv.education;
+---
+
+<section class="cv-section container" id="education">
+  <h2 class="section-title"><span class="hash">##</span>{e.title}</h2>
+  <div class="cards-grid">
+    {e.items.map((item) => (
+      <div class="card">
+        <h3>{item.name}</h3>
+        <p>{item.org}</p>
+        <p><small>{item.period}</small></p>
+      </div>
+    ))}
+  </div>
+</section>

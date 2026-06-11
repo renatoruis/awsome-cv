@@ -1,0 +1,23 @@
+---
+// Root page: redirects to the visitor's preferred language (fallback: en).
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Renato Ruis — CV</title>
+    <meta name="robots" content="noindex" />
+    <noscript><meta http-equiv="refresh" content="0; url=/en/" /></noscript>
+    <script is:inline>
+      const lang = (navigator.language || 'en').toLowerCase();
+      const target = lang.startsWith('pt-br') || lang === 'pt'
+        ? '/pt-br/'
+        : lang.startsWith('pt')
+          ? '/pt-pt/'
+          : '/en/';
+      location.replace(target);
+    </script>
+  </head>
+  <body></body>
+</html>
