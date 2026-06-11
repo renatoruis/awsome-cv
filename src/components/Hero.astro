@@ -1,10 +1,15 @@
 ---
 const { cv, ui } = Astro.props;
 const b = cv.basics;
+const aliasSlug = b.nickname.replace(/\s+/g, '');
 ---
 
 <section class="hero container">
-  <h1>{b.name} <span class="aka">aka {b.nickname}</span></h1>
+  <h1>
+    {b.name}
+    <span class="aka classic-only">aka {b.nickname}</span>
+    <span class="term-only hero-alias-term"> alias={aliasSlug}</span>
+  </h1>
   <p class="role">{b.title}</p>
   <p class="tagline">{b.tagline}</p>
   <p class="nickname-story">{b.nicknameStory}</p>
@@ -15,58 +20,175 @@ const b = cv.basics;
     <a href={b.blog} target="_blank" rel="noopener">timdevops.com.br</a>
   </div>
 
-  <div class="terminal-window" aria-hidden="true">
-    <div class="terminal-titlebar">
-      <span class="dot dot-r"></span>
-      <span class="dot dot-y"></span>
-      <span class="dot dot-g"></span>
-      <span class="title">renato@k8s:~</span>
+  <div class="classic-only">
+    <div class="terminal-window" aria-hidden="true">
+      <div class="terminal-titlebar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="title">renato@k8s:~</span>
+      </div>
+      <div class="terminal-body">
+        <div class="cmd typing-caret" id="hero-cmd" data-cmd={ui.terminalCmdGet}></div>
+        <table id="hero-table" style="visibility:hidden">
+          <thead>
+            <tr>{ui.terminalColumns.map((c) => <th>{c}</th>)}</tr>
+          </thead>
+          <tbody>
+            <tr>
+              {ui.terminalRow.map((v) => (
+                <td class={v === 'Running' ? 'status-running' : ''}>{v}</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="terminal-body">
-      <div class="cmd typing-caret" id="hero-cmd" data-cmd={ui.terminalCmdGet}></div>
-      <table id="hero-table" style="visibility:hidden">
-        <thead>
-          <tr>{ui.terminalColumns.map((c) => <th>{c}</th>)}</tr>
-        </thead>
-        <tbody>
-          <tr>
-            {ui.terminalRow.map((v, i) => (
-              <td class={v === 'Running' ? 'status-running' : ''}>{v}</td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  </div>
+
+  <div class="term-only hero-term-banner">
+    <div class="term-line">{ui.terminalCmdGet}</div>
+    <table>
+      <thead>
+        <tr>{ui.terminalColumns.map((c) => <th>{c}</th>)}</tr>
+      </thead>
+      <tbody>
+        <tr>
+          {ui.terminalRow.map((v) => (
+            <td class={v === 'Running' ? 'status-running' : ''}>{v}</td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <p class="summary">{cv.summary}</p>
 
-  <div class="stats">
-    {cv.stats.map((s) => (
-      <div class="stat">
-        <div class="value">{s.value}</div>
+  <div class="stats classic-only" id="hero-stats">
+    {cv.stats.map((s, i) => (
+      <div class="stat" style={`--stat-i: ${i}`} data-stat>
+        <div class="value" data-value={s.value}>{s.value}</div>
         <div class="label">{s.label}</div>
       </div>
     ))}
   </div>
+
+  <table class="stats-table term-only">
+    <thead>
+      <tr>
+        <th>VALUE</th>
+        <th>METRIC</th>
+      </tr>
+    </thead>
+    <tbody>
+      {cv.stats.map((s) => (
+        <tr>
+          <td class="value-cell">{s.value}</td>
+          <td class="label-cell">{s.label}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
 </section>
 
 <script is:inline>
   (() => {
     const el = document.getElementById('hero-cmd');
     const table = document.getElementById('hero-table');
+    if (!el || !table) return;
     const text = el.dataset.cmd;
+    const TYPE_MS = 28;
+    const LOOP_SLEEP_MS = 3000;
     let i = 0;
+
+    const reset = () => {
+      i = 0;
+      el.textContent = '';
+      el.classList.add('typing-caret');
+      table.style.visibility = 'hidden';
+      setTimeout(type, 350);
+    };
+
     const type = () => {
       if (i <= text.length) {
         el.textContent = text.slice(0, i);
         i += 1;
-        setTimeout(type, 28);
+        setTimeout(type, TYPE_MS);
       } else {
         el.classList.remove('typing-caret');
         table.style.visibility = 'visible';
+        setTimeout(reset, LOOP_SLEEP_MS);
       }
     };
+
     setTimeout(type, 350);
+  })();
+
+  (() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const grid = document.getElementById('hero-stats');
+    if (!grid || reduced) {
+      grid?.classList.add('is-visible');
+      return;
+    }
+
+    const parse = (raw) => {
+      const plus = raw.match(/^(\d+)\+$/);
+      if (plus) return { kind: 'count', to: +plus[1], prefix: '', suffix: '+' };
+      const pct = raw.match(/^-(\d+)%$/);
+      if (pct) return { kind: 'count', to: +pct[1], prefix: '-', suffix: '%' };
+      const frac = raw.match(/^(\d+)\/(\d+)/);
+      if (frac) return { kind: 'frac', num: +frac[1], den: +frac[2] };
+      return { kind: 'text' };
+    };
+
+    const animateValue = (node, spec, duration = 900) => {
+      const start = performance.now();
+      const tick = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - (1 - t) ** 3;
+        if (spec.kind === 'count') {
+          const n = Math.round(spec.to * eased);
+          node.textContent = `${spec.prefix}${n}${spec.suffix}`;
+        } else if (spec.kind === 'frac') {
+          const n = Math.max(1, Math.round(spec.num * eased));
+          node.textContent = `${n}/${spec.den}`;
+        }
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const run = () => {
+      grid.classList.add('is-visible');
+      grid.querySelectorAll('[data-stat]').forEach((card, idx) => {
+        setTimeout(() => {
+          card.classList.add('is-active');
+          const valueEl = card.querySelector('.value');
+          const raw = valueEl.dataset.value;
+          const spec = parse(raw);
+          if (spec.kind === 'count' || spec.kind === 'frac') {
+            valueEl.textContent = spec.kind === 'count' ? `${spec.prefix}0${spec.suffix}` : `0/${spec.den}`;
+            animateValue(valueEl, spec);
+          }
+        }, idx * 120);
+      });
+    };
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          run();
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    obs.observe(grid);
+
+    grid.querySelectorAll('[data-stat]').forEach((card) => {
+      card.addEventListener('pointerenter', () => card.classList.add('is-hover'));
+      card.addEventListener('pointerleave', () => card.classList.remove('is-hover'));
+    });
   })();
 </script>

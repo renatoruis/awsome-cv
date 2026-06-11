@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/terminal.css';
 import '../styles/print.css';
 
 const { cv, ui } = Astro.props;
@@ -30,7 +31,7 @@ const jsonLd = {
 <html lang={cv.htmlLang} data-theme="classic">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{ui.metaTitle}</title>
     <meta name="description" content={ui.metaDescription} />
     <link rel="canonical" href={canonical} />
@@ -39,6 +40,12 @@ const jsonLd = {
     ))}
     <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content={ui.metaTitle} />

@@ -7,7 +7,9 @@ const c = cv.certifications;
   <h2 class="section-title"><span class="hash">##</span>{c.title}</h2>
   <p class="section-cmd">kubectl get certs --field-selector status=Active</p>
   <div class="cert-featured">
-    {c.featured.map((cert) => <div class="cert-badge">☸ {cert}</div>)}
+    {c.featured.map((cert) => (
+      <div class="cert-badge"><span class="classic-only">☸ </span>{cert}</div>
+    ))}
   </div>
   <ul class="cert-others">
     {c.others.map((cert) => <li>{cert}</li>)}

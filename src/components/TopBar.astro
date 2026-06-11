@@ -6,8 +6,14 @@ const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
 
 <header class="topbar">
   <div class="topbar-inner">
+    <span class="term-only topbar-dots" aria-hidden="true">
+      <span class="dot dot-r"></span>
+      <span class="dot dot-y"></span>
+      <span class="dot dot-g"></span>
+    </span>
     <a class="brand" href={`/${cv.locale}/`}>
-      <span class="prompt-char">~$</span> renatoruis
+      <span class="classic-only"><span class="prompt-char">~$</span> renatoruis</span>
+      <span class="term-only">renato@k8s:~/cv</span>
     </a>
     <div class="topbar-actions">
       <nav class="lang-switch" aria-label="Language">
@@ -23,18 +29,30 @@ const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
           </a>
         ))}
       </nav>
-      <button
-        class="btn btn-easter"
-        id="theme-toggle"
-        type="button"
-        title={ui.themeHint}
-        data-label-terminal={ui.themeTerminal}
-        data-label-classic={ui.themeClassic}
+      <span class="easter-wrap" id="easter-wrap">
+        <span class="easter-callout" id="easter-callout">{ui.themeCallout}</span>
+        <button
+          class="btn btn-easter btn-icon"
+          id="theme-toggle"
+          type="button"
+          title={ui.themeHint}
+          aria-label={ui.themeTerminal}
+          data-label-terminal={ui.themeTerminal}
+          data-label-classic={ui.themeClassic}
+        >
+          <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+          <span class="btn-easter-label">{ui.themeTerminal}</span>
+        </button>
+      </span>
+      <a
+        class="btn btn-primary btn-icon btn-pdf"
+        href={pdfHref}
+        download
+        title={ui.downloadPdf}
+        aria-label={ui.downloadPdf}
       >
-        {ui.themeTerminal}
-      </button>
-      <a class="btn btn-primary" href={pdfHref} download>
-        ⬇ {ui.downloadPdf}
+        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+        <span class="btn-pdf-label">{ui.downloadPdf}</span>
       </a>
     </div>
   </div>
@@ -43,16 +61,25 @@ const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
 <script is:inline>
   (() => {
     const btn = document.getElementById('theme-toggle');
+    const labelEl = btn.querySelector('.btn-easter-label');
     const root = document.documentElement;
+
     const sync = () => {
       const isTerminal = root.dataset.theme === 'terminal';
-      btn.textContent = isTerminal ? btn.dataset.labelClassic : btn.dataset.labelTerminal;
+      const label = isTerminal ? btn.dataset.labelClassic : btn.dataset.labelTerminal;
+      if (labelEl) labelEl.textContent = label;
+      btn.setAttribute('aria-label', label);
     };
+
     btn.addEventListener('click', () => {
+      document.body.classList.add('theme-switching');
       root.dataset.theme = root.dataset.theme === 'terminal' ? 'classic' : 'terminal';
       localStorage.setItem('cv-theme', root.dataset.theme);
       sync();
+      setTimeout(() => document.body.classList.remove('theme-switching'), 300);
     });
+
+    document.getElementById('easter-callout')?.addEventListener('click', () => btn.click());
     sync();
   })();
 </script>

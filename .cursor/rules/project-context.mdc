@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+
+# AWSOME-CV — regras do projeto
+
+Ler **CONTEXT.md** na raiz antes de explorar o repo em massa.
+
+## Stack
+Astro estático + JSON i18n (en, pt-pt, pt-br) + Puppeteer PDF + Cloudflare Pages (`renato-cv`, domínio `cv.timdevops.com.br`).
+
+## Onde editar
+- Conteúdo CV: `src/data/cv.{locale}.json`
+- UI: `src/data/ui.{locale}.json`
+- Componentes: `src/components/`
+- Temas classic/terminal: `src/styles/global.css`
+
+## Convenções
+- Tom informal; apelido **Tim DevOps** no hero; bandeiras no lang switch
+- Botão `>_ terminal` é easter-egg (destaque visual)
+- PDFs gerados no build a partir de `print.css`; não editar PDFs à mão
+- Commits e push só quando o utilizador pedir
+
+## Graphify
+Se `graphify-out/graph.json` existir: `graphify query` antes de Read/Grep em massa. Atualmente **não existe** — não construir sem pedido.
+
+## Shell
+Prefixar com `rtk`. Responder em português, conciso.
