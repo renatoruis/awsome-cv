@@ -2,10 +2,10 @@
   "metaTitle": "Renato Ruis — Senior DevOps Engineer · Kubestronaut",
   "metaDescription": "Senior DevOps Engineer and CNCF Kubestronaut (CKA, CKAD, CKS, KCNA, KCSA). 8+ years in Kubernetes, multi-cloud (AWS, OCI, GCP), GitOps and FinOps. Remote from Portugal.",
   "downloadPdf": "Download PDF",
-  "themeTerminal": ">_ terminal",
+  "themeTerminal": "terminal",
   "themeClassic": "recruiter mode",
   "themeHint": "psst... this one's for the techies",
-  "themeCallout": "try it →",
+  "themeCallout": "try it",
   "contact": "Contact",
   "terminalCmdGet": "kubectl get engineer renatoruis -o wide",
   "terminalColumns": ["NAME", "READY", "STATUS", "CERTS", "CLOUDS", "AGE"],
@@ -13,6 +13,36 @@
   "terminalCmdDescribe": "kubectl describe engineer renatoruis",
   "terminalCmdLogs": "kubectl logs renato --tail=4",
   "conditionsLabel": "Conditions",
+  "pitchCopy": "Copy summary for the hiring manager",
+  "pitchCopied": "Copied ✓",
+  "pitchText": "Renato Ruis — Senior DevOps Engineer · Portugal (EU), 100% remote\n• CNCF Kubestronaut: all 5 Kubernetes certifications (CKA, CKAD, CKS, KCNA, KCSA)\n• 8+ years DevOps/SRE — cut deploy time up to 70% with CI/CD + GitOps\n• Multi-cloud in production (AWS, OCI, GCP) — cluster migrations with minimal downtime\n• Portuguese native · English B1/B2 · distributed teams\nCV: https://cv.timdevops.com.br/en/ · LinkedIn: https://www.linkedin.com/in/renatoruis/",
+  "decoder": {
+    "prompt": "Not technical? Here's what these actually mean",
+    "intro": "All five exams are hands-on, terminal-open, clock-running. In plain terms:",
+    "items": [
+      "CKA — keeps Kubernetes platforms running and fixes them when they break",
+      "CKAD — builds and ships applications on Kubernetes the right way",
+      "CKS — secures the platform: secrets, policies, hardening, supply chain",
+      "KCNA + KCSA — solid grasp of the cloud-native ecosystem and its security"
+    ],
+    "punchline": "Yes, it's harder than it looks on LinkedIn."
+  },
+  "incident": {
+    "title": "Production is down. Now what?",
+    "intro": "A 15-second tour of how I actually handle an incident:",
+    "play": "Run scenario",
+    "replay": "Run again",
+    "steps": [
+      { "tag": "Detect", "text": "Alert fires. Acknowledge fast, assess blast radius. No panic." },
+      { "tag": "Communicate", "text": "Plain-language update to stakeholders: impact, ETA, next update time." },
+      { "tag": "Fix", "text": "Rollback first if possible, debug after. Small, reversible steps." },
+      { "tag": "Learn", "text": "Blameless postmortem. Fix the system, not the person. MTTR goes down." }
+    ],
+    "punchline": "Root cause: someone deployed on a Friday. (Kidding. Mostly.)"
+  },
+  "sayHi": "Say hi",
+  "mailSubject": "Hi Renato — saw your CV",
+  "mailBody": "Hi Renato,\n\nI found your CV at cv.timdevops.com.br and I'd like to talk about an opportunity.\n\nRole:\nCompany:\nRemote policy:\n\nBest,",
   "footerBuilt": "Built with Astro, deployed on Cloudflare Pages.",
   "footerSource": "Source code",
   "blogVisit": "Read the blog",

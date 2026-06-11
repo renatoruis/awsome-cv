@@ -5,6 +5,7 @@ const l = cv.languages;
 
 <section class="cv-section container" id="languages">
   <h2 class="section-title"><span class="hash">##</span>{l.title}</h2>
+  <p class="section-cmd">kubectl get languages -o wide</p>
   {l.items.map((item) => (
     <div class="lang-item">
       <span class="lang-name">{item.name}</span>

@@ -1,6 +1,7 @@
 # build
 dist/
 .astro/
+public/pdf/
 
 # deps
 node_modules/

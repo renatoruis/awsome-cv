@@ -25,4 +25,72 @@ const toCondition = (name) =>
       </div>
     ))}
   </div>
+
+  <div class="incident-demo" id="incident-demo">
+    <div class="incident-head">
+      <h3 class="incident-title">{ui.incident.title}</h3>
+      <p class="incident-intro">{ui.incident.intro}</p>
+      <button
+        class="btn incident-play"
+        id="incident-play"
+        type="button"
+        data-play={ui.incident.play}
+        data-replay={ui.incident.replay}
+      >
+        <i class="fa-solid fa-play" aria-hidden="true"></i>
+        <span class="incident-play-label">{ui.incident.play}</span>
+      </button>
+    </div>
+    <ol class="incident-steps">
+      {ui.incident.steps.map((s) => (
+        <li class="incident-step">
+          <span class="incident-tag">{s.tag}</span>
+          <span class="incident-text">{s.text}</span>
+        </li>
+      ))}
+      <li class="incident-step incident-punchline">{ui.incident.punchline}</li>
+    </ol>
+  </div>
 </section>
+
+<script is:inline>
+  (() => {
+    const demo = document.getElementById('incident-demo');
+    const btn = document.getElementById('incident-play');
+    if (!demo || !btn) return;
+
+    demo.dataset.armed = 'true';
+    const steps = [...demo.querySelectorAll('.incident-step')];
+    const label = btn.querySelector('.incident-play-label');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const timers = [];
+    const STEP_MS = 2600;
+
+    btn.addEventListener('click', () => {
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+      steps.forEach((s) => s.classList.remove('is-shown'));
+      btn.disabled = true;
+
+      const finish = () => {
+        btn.disabled = false;
+        label.textContent = btn.dataset.replay;
+      };
+
+      if (reduced) {
+        steps.forEach((s) => s.classList.add('is-shown'));
+        finish();
+        return;
+      }
+
+      steps.forEach((s, i) => {
+        timers.push(
+          setTimeout(() => {
+            s.classList.add('is-shown');
+            if (i === steps.length - 1) finish();
+          }, 300 + i * STEP_MS)
+        );
+      });
+    });
+  })();
+</script>

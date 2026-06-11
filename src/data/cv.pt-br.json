@@ -14,6 +14,16 @@
     "blog": "https://timdevops.com.br",
     "github": "https://github.com/renatoruis"
   },
+  "quickFacts": {
+    "title": "Resumo rápido para recruiters",
+    "items": [
+      { "icon": "fa-solid fa-location-dot", "text": "Morando em Portugal (UE) · 100% remoto" },
+      { "icon": "fa-solid fa-clock", "text": "Fuso WET/Lisboa · overlap fácil com UE e Américas" },
+      { "icon": "fa-solid fa-language", "text": "Português nativo · Inglês B1/B2 (com honestidade)" },
+      { "icon": "fa-solid fa-briefcase", "text": "DevOps/SRE Sênior · 8+ anos · times distribuídos" },
+      { "icon": "fa-solid fa-certificate", "text": "Kubestronaut CNCF · 5/5 certificações Kubernetes" }
+    ]
+  },
   "summary": "Fala! Sou o Renato, mas todo mundo me conhece como Tim. Engenheiro DevOps Sênior com 8+ anos construindo e escalando plataformas cloud para e-commerce, fintech, farma e logística. Kubestronaut: as cinco certificações Kubernetes da CNCF (CKA, CKAD, CKS, KCNA, KCSA). Já cortei o tempo de deploy em até 70% com CI/CD e GitOps, economizei dinheiro de verdade com FinOps e migrei plataformas Kubernetes inteiras entre clouds quase sem downtime. E acredito de verdade que boa infraestrutura começa pelas pessoas: transparência, cultura blameless e calma quando as coisas pegam fogo.",
   "stats": [
     { "label": "Anos em DevOps/SRE", "value": "8+" },
@@ -147,6 +157,7 @@
   },
   "certifications": {
     "title": "Certificações",
+    "kubestronaut": "CNCF Kubestronaut · 5/5 certificações Kubernetes",
     "featured": [
       "CKA — Certified Kubernetes Administrator (CNCF)",
       "CKAD — Certified Kubernetes Application Developer (CNCF)",

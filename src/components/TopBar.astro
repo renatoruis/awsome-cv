@@ -32,7 +32,7 @@ const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
       <span class="easter-wrap" id="easter-wrap">
         <span class="easter-callout" id="easter-callout">{ui.themeCallout}</span>
         <button
-          class="btn btn-easter btn-icon"
+          class="btn btn-easter"
           id="theme-toggle"
           type="button"
           title={ui.themeHint}
@@ -40,7 +40,8 @@ const pdfHref = `/pdf/renato-ruis-cv-${cv.locale}.pdf`;
           data-label-terminal={ui.themeTerminal}
           data-label-classic={ui.themeClassic}
         >
-          <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+          <span class="btn-prompt classic-only" aria-hidden="true">&gt;_</span>
+          <span class="term-only btn-recruiter-mark" aria-hidden="true"><i class="fa-regular fa-id-card"></i></span>
           <span class="btn-easter-label">{ui.themeTerminal}</span>
         </button>
       </span>

@@ -17,16 +17,37 @@ const { cv, ui } = Astro.props;
 
 <Layout cv={cv} ui={ui}>
   <TopBar cv={cv} ui={ui} />
-  <main>
+  <main id="main-content">
     <Hero cv={cv} ui={ui} />
-    <Kubernetes cv={cv} />
+    <Kubernetes cv={cv} ui={ui} />
     <HowIWork cv={cv} ui={ui} />
     <Experience cv={cv} />
     <Skills cv={cv} />
-    <Certs cv={cv} />
+    <Certs cv={cv} ui={ui} />
     <Education cv={cv} />
     <LanguagesSec cv={cv} />
     <Blog cv={cv} ui={ui} />
   </main>
+  <script is:inline>
+    (() => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const sections = document.querySelectorAll('.cv-section');
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -5% 0px' }
+      );
+      sections.forEach((s) => {
+        s.classList.add('reveal');
+        io.observe(s);
+      });
+    })();
+  </script>
   <Footer cv={cv} ui={ui} />
 </Layout>

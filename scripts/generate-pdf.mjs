@@ -1,6 +1,7 @@
 /**
  * Generates one ATS-friendly PDF per locale from the built site (dist/),
  * using the @media print stylesheet. Output: dist/pdf/renato-ruis-cv-<locale>.pdf
+ * Also copies into public/pdf/ so the dev server can serve the PDF links.
  */
 import http from 'node:http';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
@@ -10,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer';
 
 const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
+const PUBLIC = fileURLToPath(new URL('../public/', import.meta.url));
 const LOCALES = ['en', 'pt-pt', 'pt-br'];
 const PORT = 4321;
 
@@ -46,6 +48,7 @@ console.log(`Serving dist/ on http://localhost:${PORT}`);
 const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
 await mkdir(path.join(DIST, 'pdf'), { recursive: true });
+await mkdir(path.join(PUBLIC, 'pdf'), { recursive: true });
 
 for (const locale of LOCALES) {
   const url = `http://localhost:${PORT}/${locale}/`;
@@ -57,6 +60,7 @@ for (const locale of LOCALES) {
   });
   const out = path.join(DIST, 'pdf', `renato-ruis-cv-${locale}.pdf`);
   await writeFile(out, pdf);
+  await writeFile(path.join(PUBLIC, 'pdf', `renato-ruis-cv-${locale}.pdf`), pdf);
   console.log(`✔ ${out}`);
 }
 

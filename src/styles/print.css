@@ -27,7 +27,11 @@
   .term-only,
   .condition-tag,
   .section-title .hash,
-  .blog-visit-btn {
+  .blog-visit-btn,
+  .quick-facts,
+  .cert-decoder,
+  .incident-demo,
+  .say-hi {
     display: none !important;
   }
 
@@ -77,6 +81,8 @@
 
   section.cv-section {
     padding: 0.7rem 0;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .section-title {
@@ -117,10 +123,11 @@
   }
 
   .cert-badge {
-    border: 1pt solid var(--accent);
+    border: none;
     background: none;
     font-size: 8.5pt;
-    padding: 0.25rem 0.5rem;
+    font-weight: 700;
+    padding: 0.1rem 0;
     break-inside: avoid;
   }
 

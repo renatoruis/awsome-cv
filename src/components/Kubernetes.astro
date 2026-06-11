@@ -1,6 +1,7 @@
 ---
-const { cv } = Astro.props;
+const { cv, ui } = Astro.props;
 const k = cv.kubernetes;
+const c = cv.certifications;
 ---
 
 <section class="cv-section container" id="kubernetes">
@@ -10,4 +11,25 @@ const k = cv.kubernetes;
   <ul class="check-list">
     {k.items.map((item) => <li>{item}</li>)}
   </ul>
+
+  <p class="section-cmd term-only kubestronaut-cmd">kubectl get kubestronaut renatoruis -o wide</p>
+  <div class="cert-kubestronaut">
+    <div class="kubestronaut-line">
+      <span class="cert-kubestronaut-icon classic-only" aria-hidden="true">☸</span>
+      {c.kubestronaut}
+    </div>
+    <details class="cert-decoder">
+      <summary>
+        <i class="fa-regular fa-circle-question" aria-hidden="true"></i>
+        {ui.decoder.prompt}
+      </summary>
+      <div class="cert-decoder-body">
+        <p>{ui.decoder.intro}</p>
+        <ul>
+          {ui.decoder.items.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="cert-decoder-punchline">{ui.decoder.punchline}</p>
+      </div>
+    </details>
+  </div>
 </section>

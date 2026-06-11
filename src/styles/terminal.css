@@ -238,23 +238,42 @@
 }
 
 [data-theme='terminal'] .section-title {
-  font-size: 0.95rem;
-  color: var(--term-label);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.25rem;
+  font-size: 0.88rem;
+  color: var(--accent);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
 }
 
 [data-theme='terminal'] .section-title .hash {
   display: none;
 }
 
+[data-theme='terminal'] .section-title::before {
+  content: 'resource/';
+  color: var(--muted);
+  font-weight: 400;
+}
+
+[data-theme='terminal'] .section-title::after {
+  content: ' · Ready';
+  color: var(--ok);
+  font-weight: 400;
+  font-size: 0.72rem;
+}
+
 [data-theme='terminal'] .section-cmd {
   display: block !important;
-  color: #e6edf3;
-  font-size: 0.78rem;
-  margin-bottom: 0.6rem;
-  padding: 0.25rem 0;
+  color: #8b97a5;
+  font-size: 0.76rem;
+  margin-bottom: 0.65rem;
+  padding: 0.35rem 0 0.35rem 0.7rem;
+  border-left: 2px solid var(--border);
+}
+
+[data-theme='terminal'] .section-cmd::before {
+  content: none;
 }
 
 [data-theme='terminal'] .section-intro {
@@ -360,7 +379,128 @@
   color: var(--accent);
 }
 
+/* ---------- Quick facts / pitch ---------- */
+[data-theme='terminal'] .quick-facts {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--border);
+  border-radius: 0;
+  padding: 0.5rem 0 0.5rem 0.85rem;
+}
+
+[data-theme='terminal'] .quick-facts-title {
+  color: var(--accent);
+}
+
+[data-theme='terminal'] .quick-facts-title::before {
+  content: '# ';
+  color: var(--muted);
+}
+
+[data-theme='terminal'] .quick-facts-list {
+  font-size: 0.8rem;
+}
+
+[data-theme='terminal'] .quick-facts-icon {
+  display: none;
+}
+
+[data-theme='terminal'] .quick-facts-list li::before {
+  content: '- ';
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- Incident demo ---------- */
+[data-theme='terminal'] .incident-demo {
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--accent);
+  border-radius: 0;
+  padding: 0.6rem 0 0.6rem 0.85rem;
+}
+
+[data-theme='terminal'] .incident-title {
+  color: var(--term-label);
+  font-size: 0.9rem;
+}
+
+[data-theme='terminal'] .incident-tag {
+  background: transparent;
+  border-radius: 0;
+  border-color: var(--border);
+}
+
+[data-theme='terminal'] .incident-step:nth-child(1) .incident-tag {
+  background: transparent;
+  color: #f87171;
+}
+
+[data-theme='terminal'] .incident-step:nth-child(4) .incident-tag {
+  background: transparent;
+}
+
+/* ---------- Cert decoder ---------- */
+[data-theme='terminal'] .cert-decoder-body {
+  background: transparent;
+  border-radius: 0;
+  font-size: 0.8rem;
+}
+
 /* ---------- Certs ---------- */
+[data-theme='terminal'] .cert-kubestronaut {
+  align-items: flex-start;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.82rem;
+  box-shadow: none;
+}
+
+[data-theme='terminal'] .kubestronaut-line {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+[data-theme='terminal'] .kubestronaut-line::before {
+  content: 'STATUS: Running · ';
+  color: var(--ok);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+[data-theme='terminal'] .cert-decoder summary {
+  margin-inline: 0;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+[data-theme='terminal'] .cert-decoder summary:hover {
+  background: var(--accent);
+  color: var(--bg);
+  filter: none;
+  transform: none;
+}
+
+[data-theme='terminal'] .cert-kubestronaut::after {
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    color-mix(in srgb, var(--accent) 35%, transparent) 50%,
+    transparent 58%
+  );
+}
+
+[data-theme='terminal'] .cert-kubestronaut:hover {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 0 24px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
 [data-theme='terminal'] .cert-badge {
   background: transparent;
   border: none;
@@ -369,12 +509,21 @@
   padding: 0.35rem 0 0.35rem 0.65rem;
   font-size: 0.8rem;
   font-weight: 400;
+  transition: border-color 0.22s ease, padding-left 0.22s ease, background 0.22s ease;
 }
 
 [data-theme='terminal'] .cert-badge::before {
   content: '[OK] ';
   color: var(--accent);
   font-weight: 700;
+}
+
+[data-theme='terminal'] .cert-badge:hover {
+  transform: none;
+  box-shadow: none;
+  border-left-color: var(--ok);
+  padding-left: 0.85rem;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
 }
 
 [data-theme='terminal'] .cert-others {

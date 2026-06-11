@@ -14,11 +14,33 @@ const aliasSlug = b.nickname.replace(/\s+/g, '');
   <p class="tagline">{b.tagline}</p>
   <p class="nickname-story">{b.nicknameStory}</p>
   <div class="meta-line">
-    <span>📍 {b.location} · {b.availability}</span>
-    <a href={`mailto:${b.email}`}>{b.email}</a>
-    <a href={b.linkedin} target="_blank" rel="noopener">LinkedIn</a>
-    <a href={b.blog} target="_blank" rel="noopener">timdevops.com.br</a>
+    <span class="meta-loc"><i class="fa-solid fa-location-dot meta-icon" aria-hidden="true"></i>{b.location} · {b.availability}</span>
+    <a href={`mailto:${b.email}`}><i class="fa-regular fa-envelope meta-icon" aria-hidden="true"></i>{b.email}</a>
+    <a href={b.linkedin} target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in meta-icon" aria-hidden="true"></i>LinkedIn</a>
+    <a href={b.blog} target="_blank" rel="noopener"><i class="fa-solid fa-globe meta-icon" aria-hidden="true"></i>timdevops.com.br</a>
   </div>
+
+  <aside class="quick-facts" aria-label={cv.quickFacts.title}>
+    <p class="quick-facts-title">{cv.quickFacts.title}</p>
+    <ul class="quick-facts-list">
+      {cv.quickFacts.items.map((f) => (
+        <li>
+          <i class={`${f.icon} quick-facts-icon`} aria-hidden="true"></i>
+          {f.text}
+        </li>
+      ))}
+    </ul>
+    <button
+      class="btn pitch-copy"
+      id="pitch-copy"
+      type="button"
+      data-pitch={ui.pitchText}
+      data-copied={ui.pitchCopied}
+    >
+      <i class="fa-regular fa-copy" aria-hidden="true"></i>
+      <span class="pitch-copy-label">{ui.pitchCopy}</span>
+    </button>
+  </aside>
 
   <div class="classic-only">
     <div class="terminal-window" aria-hidden="true">
@@ -92,6 +114,33 @@ const aliasSlug = b.nickname.replace(/\s+/g, '');
 </section>
 
 <script is:inline>
+  (() => {
+    const btn = document.getElementById('pitch-copy');
+    if (!btn) return;
+    const label = btn.querySelector('.pitch-copy-label');
+    const original = label.textContent;
+    let timer;
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.pitch);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = btn.dataset.pitch;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      label.textContent = btn.dataset.copied;
+      btn.classList.add('is-copied');
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        label.textContent = original;
+        btn.classList.remove('is-copied');
+      }, 2200);
+    });
+  })();
+
   (() => {
     const el = document.getElementById('hero-cmd');
     const table = document.getElementById('hero-table');
