@@ -62,6 +62,7 @@
         "company": "eureciclo",
         "role": "Engenheiro DevOps Sênior | SRE",
         "period": "Mai 2023 – Presente",
+        "start": "2023-05",
         "location": "Brasil (remoto)",
         "summary": "DevOps/SRE cross-team em ambiente multi-cloud (AWS, GCP, OCI), responsável por arquitetura de infraestrutura, migração, operação e otimização de custos em uma scale-up de sustentabilidade em rápido crescimento.",
         "highlights": [
@@ -78,6 +79,8 @@
         "company": "Builders",
         "role": "Consultor DevOps | SRE",
         "period": "Dez 2020 – Mai 2023",
+        "start": "2020-12",
+        "end": "2023-05",
         "location": "Brasil",
         "summary": "Consultor DevOps para grandes clientes em farmácia (Raia Drogasil, Grupo DPSP), transporte e bancos, operando ambientes cloud-native complexos em AWS/GCP.",
         "highlights": [
@@ -93,6 +96,8 @@
         "company": "FCamara Consulting & Training",
         "role": "Engenheiro DevOps | SRE",
         "period": "Dez 2018 – Dez 2020",
+        "start": "2018-12",
+        "end": "2020-12",
         "location": "São Paulo, Brasil",
         "summary": "Engenheiro DevOps central da TempoTem, startup de alto crescimento, dono das decisões de infraestrutura e segurança desde os primeiros estágios.",
         "highlights": [
@@ -107,6 +112,8 @@
         "company": "Concrete Solutions (Grupo Accenture)",
         "role": "Engenheiro DevOps",
         "period": "Jan 2017 – Dez 2018",
+        "start": "2017-01",
+        "end": "2018-12",
         "location": "São Paulo, Brasil",
         "summary": "DevOps para grandes clientes corporativos (SKY, Carrefour, Cielo), construindo pipelines de deploy automatizado para apps móveis nativos em times SCRUM.",
         "highlights": [
@@ -120,6 +127,8 @@
         "company": "Carrefour Brasil",
         "role": "Site Reliability Engineer",
         "period": "Jan 2015 – Jan 2017",
+        "start": "2015-01",
+        "end": "2017-01",
         "location": "São Paulo, Brasil",
         "summary": "Primeiro papel como SRE, nos primórdios do e-commerce do Carrefour no Brasil, construindo as fundações de monitoramento e confiabilidade.",
         "highlights": [
@@ -133,6 +142,8 @@
         "company": "Luft Solutions",
         "role": "Coordenador de Suporte Técnico",
         "period": "Ago 2010 – Out 2015",
+        "start": "2010-08",
+        "end": "2015-10",
         "location": "Barueri, Brasil",
         "summary": "Cresci de analista de infraestrutura a coordenador, liderando times de suporte em centros de distribuição em quatro estados, para clientes como Carrefour, Amazon e Louis Vuitton.",
         "highlights": [
@@ -181,9 +192,9 @@
   "education": {
     "title": "Formação",
     "items": [
-      { "name": "Análise e Desenvolvimento de Sistemas", "org": "UNINTER — Centro Universitário Internacional", "period": "2017 – 2019" },
-      { "name": "Inglês Geral (imersão)", "org": "ANNE'S Language House — Canadá", "period": "Dez 2023 – Fev 2024" },
-      { "name": "Inglês B1 (imersão)", "org": "International House — África do Sul", "period": "Set 2021 – Dez 2021" }
+      { "name": "Análise e Desenvolvimento de Sistemas", "org": "UNINTER — Centro Universitário Internacional", "period": "2017 – 2019", "start": "2017-01", "end": "2019-12" },
+      { "name": "Inglês Geral (imersão)", "org": "ANNE'S Language House — Canadá", "period": "Dez 2023 – Fev 2024", "start": "2023-12", "end": "2024-02" },
+      { "name": "Inglês B1 (imersão)", "org": "International House — África do Sul", "period": "Set 2021 – Dez 2021", "start": "2021-09", "end": "2021-12" }
     ]
   },
   "languages": {

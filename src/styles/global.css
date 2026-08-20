@@ -1299,6 +1299,14 @@ footer.site-footer .footer-prompt::before {
   color: var(--accent);
 }
 
+footer.site-footer .footer-agents {
+  margin-top: 0.75rem;
+}
+
+footer.site-footer .footer-agents a {
+  color: var(--muted);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .incident-demo[data-armed] .incident-step {
     transition: none;

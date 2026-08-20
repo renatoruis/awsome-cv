@@ -15,5 +15,13 @@ const mailHref = `mailto:${cv.basics.email}?subject=${encodeURIComponent(ui.mail
       © {year} {cv.basics.name} · {ui.footerBuilt}
       <a href="https://github.com/renatoruis/awsome-cv" target="_blank" rel="noopener"><i class="fa-brands fa-github meta-icon" aria-hidden="true"></i>{ui.footerSource}</a>
     </p>
+    <p class="footer-agents">
+      {ui.footerAgents}:
+      <a href="/llms.txt">llms.txt</a>
+      ·
+      <a href={`/${cv.locale}.md`}>Markdown</a>
+      ·
+      <a href={`/${cv.locale}.json`}>JSON</a>
+    </p>
   </div>
 </footer>

@@ -62,6 +62,7 @@
         "company": "eureciclo",
         "role": "Senior DevOps Engineer | SRE",
         "period": "May 2023 – Present",
+        "start": "2023-05",
         "location": "Brazil (remote)",
         "summary": "Cross-team DevOps/SRE in a multi-cloud environment (AWS, GCP, OCI), owning infrastructure architecture, migration, operations and cost optimization for a fast-growing sustainability scale-up.",
         "highlights": [
@@ -78,6 +79,8 @@
         "company": "Builders",
         "role": "DevOps Consultant | SRE",
         "period": "Dec 2020 – May 2023",
+        "start": "2020-12",
+        "end": "2023-05",
         "location": "Brazil",
         "summary": "DevOps consultant for large enterprise clients in pharmacy (Raia Drogasil, Grupo DPSP), transportation and banking, operating complex AWS/GCP cloud-native environments.",
         "highlights": [
@@ -93,6 +96,8 @@
         "company": "FCamara Consulting & Training",
         "role": "DevOps Engineer | SRE",
         "period": "Dec 2018 – Dec 2020",
+        "start": "2018-12",
+        "end": "2020-12",
         "location": "São Paulo, Brazil",
         "summary": "Core DevOps engineer for TempoTem, a high-growth startup, owning infrastructure and security decisions from the earliest stages.",
         "highlights": [
@@ -107,6 +112,8 @@
         "company": "Concrete Solutions (Accenture Group)",
         "role": "DevOps Engineer",
         "period": "Jan 2017 – Dec 2018",
+        "start": "2017-01",
+        "end": "2018-12",
         "location": "São Paulo, Brazil",
         "summary": "DevOps for major enterprise clients (SKY, Carrefour, Cielo), building automated deployment pipelines for native mobile apps in SCRUM teams.",
         "highlights": [
@@ -120,6 +127,8 @@
         "company": "Carrefour Brasil",
         "role": "Site Reliability Engineer",
         "period": "Jan 2015 – Jan 2017",
+        "start": "2015-01",
+        "end": "2017-01",
         "location": "São Paulo, Brazil",
         "summary": "First SRE role, during the early days of Carrefour's e-commerce in Brazil, building the monitoring and reliability foundations.",
         "highlights": [
@@ -133,6 +142,8 @@
         "company": "Luft Solutions",
         "role": "Technical Support Coordinator",
         "period": "Aug 2010 – Oct 2015",
+        "start": "2010-08",
+        "end": "2015-10",
         "location": "Barueri, Brazil",
         "summary": "Grew from infrastructure analyst to coordinator, leading field support teams across distribution centers in four Brazilian states for clients like Carrefour, Amazon and Louis Vuitton.",
         "highlights": [
@@ -181,9 +192,9 @@
   "education": {
     "title": "Education",
     "items": [
-      { "name": "Analysis and Systems Development (IT)", "org": "UNINTER — Centro Universitário Internacional", "period": "2017 – 2019" },
-      { "name": "General English (immersion)", "org": "ANNE'S Language House — Canada", "period": "Dec 2023 – Feb 2024" },
-      { "name": "English B1 (immersion)", "org": "International House — South Africa", "period": "Sep 2021 – Dec 2021" }
+      { "name": "Analysis and Systems Development (IT)", "org": "UNINTER — Centro Universitário Internacional", "period": "2017 – 2019", "start": "2017-01", "end": "2019-12" },
+      { "name": "General English (immersion)", "org": "ANNE'S Language House — Canada", "period": "Dec 2023 – Feb 2024", "start": "2023-12", "end": "2024-02" },
+      { "name": "English B1 (immersion)", "org": "International House — South Africa", "period": "Sep 2021 – Dec 2021", "start": "2021-09", "end": "2021-12" }
     ]
   },
   "languages": {

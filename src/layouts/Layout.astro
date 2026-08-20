@@ -2,29 +2,14 @@
 import '../styles/global.css';
 import '../styles/terminal.css';
 import '../styles/print.css';
+import { toJsonLd } from '../lib/ai-exports';
 
 const { cv, ui } = Astro.props;
 const locales = ['en', 'pt-pt', 'pt-br'];
 const hreflangMap = { en: 'en', 'pt-pt': 'pt-PT', 'pt-br': 'pt-BR' };
 const site = Astro.site?.href.replace(/\/$/, '') ?? '';
 const canonical = `${site}/${cv.locale}/`;
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: cv.basics.name,
-  alternateName: cv.basics.nickname,
-  jobTitle: cv.basics.title,
-  email: `mailto:${cv.basics.email}`,
-  url: canonical,
-  sameAs: [cv.basics.linkedin, cv.basics.blog, cv.basics.github],
-  address: { '@type': 'PostalAddress', addressCountry: 'PT' },
-  knowsLanguage: ['pt', 'en'],
-  hasCredential: cv.certifications.featured.map((c) => ({
-    '@type': 'EducationalOccupationalCredential',
-    name: c,
-  })),
-};
+const jsonLd = toJsonLd(cv, site);
 ---
 
 <!doctype html>
@@ -39,6 +24,10 @@ const jsonLd = {
       <link rel="alternate" hreflang={hreflangMap[l]} href={`${site}/${l}/`} />
     ))}
     <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
+    <link rel="alternate" type="text/markdown" href={`${site}/${cv.locale}.md`} title="Markdown" />
+    <link rel="alternate" type="application/json" href={`${site}/${cv.locale}.json`} title="JSON" />
+    <link rel="alternate" type="application/json" href={`${site}/${cv.locale}/resume.json`} title="JSON Resume" />
+    <link rel="describedby" href={`${site}/llms.txt`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       rel="stylesheet"

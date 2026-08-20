@@ -45,6 +45,7 @@
   "mailBody": "Hi Renato,\n\nI found your CV at cv.timdevops.com.br and I'd like to talk about an opportunity.\n\nRole:\nCompany:\nRemote policy:\n\nBest,",
   "footerBuilt": "Built with Astro, deployed on Cloudflare Pages.",
   "footerSource": "Source code",
+  "footerAgents": "For agents",
   "blogVisit": "Read the blog",
   "langFlags": { "en": "🇬🇧", "pt-pt": "🇵🇹", "pt-br": "🇧🇷" },
   "langNames": { "en": "English", "pt-pt": "Português (PT)", "pt-br": "Português (BR)" }
