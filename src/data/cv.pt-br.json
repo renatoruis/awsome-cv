@@ -48,7 +48,7 @@
     "intro": "Habilidade técnica mantém sistemas no ar. Inteligência emocional mantém times no ar. É assim que é trabalhar comigo:",
     "items": [
       { "name": "Blameless por padrão", "description": "Incidente é oportunidade de aprendizado, não tribunal. Construo culturas de postmortem onde as pessoas se sentem seguras para falar a verdade rápido. É assim que o MTTR cai de verdade." },
-      { "name": "Mentoria e contratação", "description": "Atualmente lidero a expansão do time de Infra/DevOps na eureciclo: contratando, mentorando e padronizando boas práticas para o time escalar além de mim." },
+      { "name": "Mentoria e contratação", "description": "Atualmente lidero a expansão do time de Infra/DevOps na eureciclo, cliente da InfraMind: contratando, mentorando e padronizando boas práticas para o time escalar além de mim." },
       { "name": "Calma sob pressão", "description": "Anos de plantão SRE me ensinaram que uma voz calma no canal de incidente vale mais que um script esperto. Primeiro acalmo, depois debugo." },
       { "name": "Tradução tech ↔ negócio", "description": "Explico decisões de infraestrutura em termos de custo, risco e velocidade, para que stakeholders não técnicos consigam realmente decidir." },
       { "name": "Habilitar outros times", "description": "Meço meu sucesso pela autonomia que os outros times ganham. Documentação, golden paths e pareamento em vez de gatekeeping." },
@@ -59,30 +59,31 @@
     "title": "Experiência",
     "jobs": [
       {
-        "company": "eureciclo",
-        "role": "Engenheiro DevOps Sênior | SRE",
-        "period": "Mai 2023 – Presente",
-        "start": "2023-05",
-        "location": "Brasil (remoto)",
-        "summary": "DevOps/SRE cross-team em ambiente multi-cloud (AWS, GCP, OCI), responsável por arquitetura de infraestrutura, migração, operação e otimização de custos em uma scale-up de sustentabilidade em rápido crescimento.",
+        "company": "InfraMind",
+        "role": "Consultor Sênior de DevOps e Cloud",
+        "period": "Jan 2022 – Presente",
+        "start": "2022-01",
+        "location": "Portugal · Remoto",
+        "summary": "Consultoria própria, em contrato. Trabalho sênior de DevOps e cloud em projetos de clientes, incluindo eureciclo e La Redoute (Portugal), em plataformas multi-cloud (AWS, GCP, OCI e Azure).",
         "highlights": [
-          "Liderei replatform Kubernetes multi-cloud: EKS/GKE para OKE, migrando MySQL/PostgreSQL com downtime mínimo",
-          "Estabeleci GitOps com Argo CD e CI/CD com Bitbucket Pipelines: deploys mais rápidos, auditáveis e reversíveis",
-          "Construí observabilidade com Prometheus, Grafana e Alertmanager; defini SLIs/SLOs e reduzi o MTTR",
-          "Conduzi FinOps: rightsizing, reservas, limpeza e negociação com provedores, com economia mensurável",
-          "Adotei engenharia assistida por IA/LLM para debugging, análise de logs e automação",
-          "Lidero a expansão do time: contratação, mentoria e padronização de práticas DevOps"
+          "eureciclo: liderei o replatform Kubernetes multi-cloud, de EKS/GKE para OKE, migrando MySQL/PostgreSQL com downtime mínimo",
+          "eureciclo: estabeleci GitOps com Argo CD e CI/CD com Bitbucket Pipelines: deploys mais rápidos, auditáveis e reversíveis",
+          "eureciclo: construí observabilidade com Prometheus, Grafana e Alertmanager; defini SLIs/SLOs e reduzi o MTTR",
+          "eureciclo: conduzi FinOps (rightsizing, reservas, limpeza e negociação com provedores) com economia mensurável",
+          "eureciclo: adotei engenharia assistida por IA/LLM para debugging, análise de logs e automação",
+          "eureciclo: lidero a expansão do time: contratação, mentoria e padronização de práticas DevOps",
+          "Nos clientes: Terraform, Kubernetes (EKS, GKE, OKE, AKS), GitOps, gestão de segredos e identidade (Keycloak), Kong e OpenTelemetry"
         ],
-        "labels": { "stack": "k8s,aws,gcp,oci,terraform,argocd", "impact": "finops-savings,minimal-downtime-migration" }
+        "labels": { "stack": "k8s,aws,gcp,oci,azure,terraform,argocd", "impact": "multi-client,finops-savings,minimal-downtime-migration" }
       },
       {
         "company": "Builders",
-        "role": "Consultor DevOps | SRE",
+        "role": "Engenheiro DevOps | Engenheiro de Sistemas | SRE",
         "period": "Dez 2020 – Mai 2023",
         "start": "2020-12",
         "end": "2023-05",
-        "location": "Brasil",
-        "summary": "Consultor DevOps para grandes clientes em farmácia (Raia Drogasil, Grupo DPSP), transporte e bancos, operando ambientes cloud-native complexos em AWS/GCP.",
+        "location": "Brasil · Remoto",
+        "summary": "Contrato de DevOps para grandes clientes em farmácia (Raia Drogasil, Grupo DPSP), transporte e bancos, operando ambientes cloud-native complexos em AWS/GCP.",
         "highlights": [
           "Projetei e otimizei pipelines CI/CD com GitLab CI, Bitbucket Pipelines e GitHub Actions em múltiplos times",
           "Construí e escalei plataformas Kubernetes/Docker para e-commerce de alto tráfego e core business",
@@ -94,17 +95,17 @@
       },
       {
         "company": "FCamara Consulting & Training",
-        "role": "Engenheiro DevOps | SRE",
+        "role": "Engenheiro DevOps | Engenheiro de Sistemas | SRE",
         "period": "Dez 2018 – Dez 2020",
         "start": "2018-12",
         "end": "2020-12",
-        "location": "São Paulo, Brasil",
+        "location": "Grande São Paulo, Brasil",
         "summary": "Engenheiro DevOps central da TempoTem, startup de alto crescimento, dono das decisões de infraestrutura e segurança desde os primeiros estágios.",
         "highlights": [
           "Projetei infraestrutura AWS escalável suportando o crescimento acelerado do produto",
           "Operei workloads containerizados com Docker e Kubernetes; CI/CD com Bitbucket Pipelines",
           "Entreguei observabilidade completa: Elasticsearch, Kibana, Prometheus, Grafana, Alertmanager e Instana",
-          "Contribuí nas decisões de segurança e arquitetura desde o dia um; suportei entregas frontend via Vercel"
+          "Contribuí nas decisões de segurança e arquitetura desde o dia um; suportei entregas frontend via Vercel e o backend em PHP, Magento e Bash"
         ],
         "labels": { "stack": "aws,k8s,docker,elk", "impact": "startup-from-scratch" }
       },
@@ -163,7 +164,7 @@
       { "name": "CI/CD e GitOps", "items": ["Argo CD", "Flux CD", "GitHub Actions", "GitLab CI", "Bitbucket Pipelines", "Jenkins"] },
       { "name": "Infraestrutura como Código", "items": ["Terraform", "Ansible", "CloudFormation"] },
       { "name": "Observabilidade", "items": ["Prometheus", "Grafana", "Alertmanager", "OpenTelemetry", "Loki/Tempo", "ELK/OpenSearch", "Datadog", "Zabbix"] },
-      { "name": "Outros", "items": ["Linux (avançado)", "FinOps", "Bash/Shell", "Python", "Kafka", "Kong API Gateway", "MySQL/PostgreSQL/MongoDB", "Workflows assistidos por IA/LLM"] }
+      { "name": "Outros", "items": ["Linux (avançado)", "FinOps", "Bash/Shell", "Python", "Kafka", "Kong API Gateway", "Keycloak", "MySQL/PostgreSQL/MongoDB", "Workflows assistidos por IA/LLM"] }
     ]
   },
   "certifications": {
